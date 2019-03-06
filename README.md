@@ -56,20 +56,30 @@
 
 ## show
 
-- bilibili自动登录测试正常，成功率98%
+### bilibili自动登录测试正常，成功率98%
 
 ![](./image/bilibili.jpg)
 
-- web微信
+### web微信
 
 
 ![Alt text](./image/weixin.jpg)
 
-- 图虫爬虫
+### 图虫爬虫
 
 ![](./image/Jietu20190306-232224.jpg)
 
 ![](./image/Jietu20190306-232303.jpg)
+
+### 淘宝 - 淘宝网
+- taobao.py 为模拟登录
+- 剩下的为爬虫
+
+```
+1. 爬取淘宝各子标签，按销量排名商品信息，按分类保存至MongoDB
+2. 通过pandas进行数据分析
+3. 将商品在各省分布、销量排行、地图分布等通过matplotlib绘图显示
+```
 
 ## tips of pull request 
 
