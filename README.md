@@ -10,17 +10,19 @@
 
 虽然在登录的时候采用的是selenium,为了效率，我们可以在登录过后得到的cookie维护起来，然后调用requests或者scrapy等进行数据采集，这样数据采集的速度可以得到保证。
 
-下面是已经实现和待实现的目标
+下面是已经实现的目标
 
-- [x] 微博
+- [x] Facebook
+- [x] Twitter
+- [x] Weibo
 - [x] 知乎
-- [x] QQ空间
-- [x] 京东
-- [x] 163邮箱
+- [x] QQZone
 - [x] CSDN
-- [ ] 淘宝
-- [x] 百度
-- [ ] 果壳
+- [x] 淘宝
+- [x] Baidu
+- [x] 果壳
+- [x] JingDong
+- [x] 163main
 - [x] 拉钩
 
 
