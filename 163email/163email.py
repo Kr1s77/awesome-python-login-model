@@ -5,10 +5,10 @@ from selenium import webdriver
 def login():
     acount_num = input('请输入账号:\n')
     passwd_str = input('请输入密码:\n')
-    driver = webdriver.Chrome(executable_path='/Users/resolvewang/Documents/program/driver/chromedriver')
+    driver = webdriver.Chrome()
     url = 'http://mail.163.com/'
     driver.get(url)
-    time.sleep(5)
+    time.sleep(30)
     # 163登陆框是使用iframe进行嵌套的，所以需要先切换到该iframe
     driver.switch_to.frame('x-URS-iframe')
 

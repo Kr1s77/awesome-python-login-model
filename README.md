@@ -61,6 +61,9 @@
 - [x] [gihub](https://github.com/)
 - [x] [图虫](https://tuchong.com/)
 
+## show
+![Alt text](./image/weixin.jpg)
+
 ## tips of pull request 
 
 - 欢迎大家一起来 pull request 
@@ -80,7 +83,7 @@
 2. 如果你觉得某个网站的登录很有代表性，欢迎在 issue 中提出
 3. 如果网站的登录很有意思，我会在后面的更新中加入
 4. 网站的登录机制有可能经常的变动，所以当现在的模拟的登录的规则不能使用的时候，请在 issue 中提出
-- 如果关注量大的话，我还是会不断维护此仓库带来更多的东西，并且重构代码！
+- 如果关注量大的话，我还是会不断维护此仓库带来更多的东西，并且重构代码，
 
 ## Acknowledgement
 - Thanks for all!
