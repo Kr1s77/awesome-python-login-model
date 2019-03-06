@@ -21,9 +21,9 @@
 ****
 
 # Website_login_mode
-收集了一些各大网站登陆方式，有的是通过selenium登录，有的是通过抓包直接模拟登录，希望对小白有所帮助,本项目用于研究和分享各大网站的模拟登陆方式。
+收集了一些各大网站登陆方式， 和一些网站的爬虫程序，有的是通过selenium登录，有的是通过抓包直接模拟登录，有的是利用scrapy,希望对小白有所帮助,本项目用于研究和分享各大网站的模拟登陆方式，和爬虫程序，会持续更新。。。
 
-## 模拟登录一些常见的网站
+## 模拟登录一些常见的网站和爬取相应的信息
 
 
 ## About
@@ -43,16 +43,16 @@
 - [x] [淘宝](www.taobao.com)
 - [x] [Baidu](www.baidu.com)
 - [x] [果壳](https://www.guokr.com/)
-- [x] [JingDong](https://www.jd.com/)
+- [x] [JingDong 模拟登录和自动申请京东试用](https://www.jd.com/)
 - [x] [163mail](https://mail.163.com/)
 - [x] [拉钩](https://www.lagou.com/)
 - [x] [Bilibili](https://www.bilibili.com/)
 - [x] [豆瓣](https://www.douban.com/)
 - [x] [Baidu2](www.baidu.com)
 - [x] [猎聘网](https://www.liepin.com/)
-- [x] [微信网页版](https://wx.qq.com/)
+- [x] [微信网页版登录并获取好友列表](https://wx.qq.com/)
 - [x] [gihub](https://github.com/)
-- [x] [图虫](https://tuchong.com/)
+- [x] [爬取图虫相应的图片](https://tuchong.com/)
 
 ## show
 - web微信
