@@ -1,4 +1,4 @@
-<h2 align="center"><code>Website_login_mode</code></h2>
+<h2 align="center"><code>🐍Website_login_mode</code></h2>
 
 <br>
 <p align="center">
@@ -57,26 +57,48 @@
 
 ## show
 
-- bilibili自动登录测试正常，成功率98%
+### Bilibili自动登录测试正常，成功率98%
 
 ![](./image/bilibili.jpg)
 
-- web微信
+### web微信
 
 
 ![Alt text](./image/weixin.jpg)
 
-- 图虫爬虫
+### 图虫爬虫
 
 ![](./image/Jietu20190306-232224.jpg)
 
 ![](./image/Jietu20190306-232303.jpg)
 
-- guoke.spider使用需谨慎，下载的比较快！10秒能下载一堆，截图我就不展示了，已经删除☺
+### 淘宝web
+- taobao.py为模拟登录
+- 剩下的文件为爬虫
+
+```
+1. 爬取淘宝各子标签，按销量排名商品信息，按分类保存至MongoDB
+2. 通过pandas进行数据分析
+3 .将商品在各省分布、销量排行、地图分布等通过matplotlib绘图显示
+```
+
+### guoke.spider使用需谨慎，下载的比较快！10秒能下载一堆，截图我就不展示了，已经删除,东西太多了😝
+
+### 微博
+- sina.py为模拟登录
+- spider文件夹中为爬虫
+
+```
+1. 输入要爬取的博主ID，获取ajax请求
+2. 解析json数据，爬取博主所有微博，保存至MySQL
+
+```
+
+
 
 ## tips of pull request 
 
-- 欢迎大家一起来 pull request 
+- 欢迎大家一起来 pull request 💗
 
 ## Problems
 
