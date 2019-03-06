@@ -55,6 +55,11 @@
 - [x] [爬取图虫相应的图片](https://tuchong.com/)
 
 ## show
+
+- bilibili自动登录测试正常，成功率98%
+
+![](./image/bilibili.jpg)
+
 - web微信
 
 

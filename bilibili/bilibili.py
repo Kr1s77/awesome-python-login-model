@@ -1,229 +1,218 @@
-import time
-from io import BytesIO
-from PIL import Image
 from selenium import webdriver
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import TimeoutException
+from PIL import Image
+from io import BytesIO
+from time import sleep
+import random
 
-EMAIL = '1148995537@qq.com'
-PASSWORD = 'jian1998528'
-BORDER = 21
-LEFT_INIT = 70
-TOP_INIT = 30
-RIGHT_INIT = 30
-BOTTOM_INIT = 30
+"""
+info:
+author:CriseLYJ
+github:https://github.com/CriseLYJ/
+update_time:2019-3-7
+"""
 
-
-class CrackGeetest():
-
-    def __init__(self):
-        self.url = 'https://passport.bilibili.com/login'
+class BiliBili():
+    """
+    登陆B站, 处理极验验证码
+    电脑的缩放比例需要为100%, 否则验证码图片的获取会出现问题
+    """
+    def __init__(self, username, password):
+        """
+        初始化
+        """
         self.browser = webdriver.Chrome()
-        self.wait = WebDriverWait(self.browser, 13)
-        self.email = EMAIL
-        self.password = PASSWORD
+        self.url = 'https://passport.bilibili.com/login'
+        self.browser.get(self.url)
+        self.wait = WebDriverWait(self.browser, 5)
+        self.username = username
+        self.password = password
 
-    def __del__(self):
-        self.browser.close()
-
-    def get_geetest_button(self):
+    def get_button(self):
         """
-        获取初始验证按钮
-        :return:
+        获取滑动块, 并且返回
+        :return: button
         """
-        button = self.wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, '#gc-box > div > div.gt_slider > div.gt_slider_knob')))
+        button = self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'gt_slider_knob')))
         return button
 
-    def get_see_image(self, button):
+    def get_screenshot(self, button):
         """
-        鼠标悬停
-        :param button:
-        :return:
+        获取网页两次截图:
+            1. 鼠标悬停于button的截图
+            2. 鼠标点击button后的截图
+        :param button: 滑动块
+        :return: 两次截图的结果
         """
         ActionChains(self.browser).move_to_element(button).perform()
+        screenshot1 = self.browser.get_screenshot_as_png()
+        screenshot1 = Image.open(BytesIO(screenshot1))
+        ActionChains(self.browser).click_and_hold(button).perform()
+        screenshot2 = self.browser.get_screenshot_as_png()
+        screenshot2 = Image.open(BytesIO(screenshot2))
+        return (screenshot1, screenshot2)
 
-    def get_position(self):
+    def get_position(self, button):
         """
-        获取验证码位置
-        :return: 验证码位置元组
+        获取验证码图片的位置
+        :return: 位置的四个点参数
         """
-        img = self.wait.until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, '#gc-box > div > div.gt_widget.gt_clean')))
-        time.sleep(2)
+        ActionChains(self.browser).move_to_element(button).perform()
+        img = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'gt_box')))
+        sleep(2)
         location = img.location
         size = img.size
-        top, bottom, left, right = location['y'], location['y'] + size['height'], location['x'], location['x'] + size[
-            'width']
-        return (top, bottom, left, right)
+        print(location, size)
+        top, bottom, left, right = location['y'], location['y'] + size['height'], location['x'], \
+                                   location['x'] + size['width']
+        return top, bottom, left, right
 
-    def get_screenshot(self):
+    def get_geetest_image(self, button, name1='captcha1.png', name2='captcha2.png'):
         """
-        获取网页截图
-        :return: 截图对象
+        获取两次验证码的截图:
+            1. 鼠标悬停于button的截图
+            2. 鼠标点击button后的截图
+        :param button: 滑动块
+        :param name1: 原始验证码保存的名字
+        :param name2: 缺块验证码保存的名字
+        :return: 两次验证码截图的结果
         """
-        time.sleep(3)
-        screenshot = self.browser.get_screenshot_as_png()
-        screenshot = Image.open(BytesIO(screenshot))
-        return screenshot
-
-    def get_geetest_image(self, name='captcha.png'):
-        """
-        获取验证码图片
-        :return: 图片对象
-        """
-        top, bottom, left, right = self.get_position()
+        top, bottom, left, right = self.get_position(button)
         print('验证码位置', top, bottom, left, right)
-        screenshot = self.get_screenshot()
-        captcha = screenshot.crop((left, top, right, bottom))
-        captcha.save(name)
-        return captcha
+        screenshot = self.get_screenshot(button)
+        captcha1 = screenshot[0].crop((left, top, right, bottom))
+        captcha1.save(name1)
+        captcha2 = screenshot[1].crop((left, top, right, bottom))
+        captcha2.save(name2)
+        return (captcha1, captcha2)
 
-    def open(self):
+    def login(self):
         """
-        打开网页输入用户名密码
+        打开浏览器,并且输入账号密码
         :return: None
         """
         self.browser.get(self.url)
-        email = self.wait.until(EC.presence_of_element_located((By.ID, 'login-username')))
-        password = self.wait.until(EC.presence_of_element_located((By.ID, 'login-passwd')))
-        time.sleep(2.3)
-        email.send_keys(self.email)
-        time.sleep(3.1)
+        username = self.wait.until(EC.element_to_be_clickable((By.ID, 'login-username')))
+        password = self.wait.until(EC.element_to_be_clickable((By.ID, 'login-passwd')))
+        sleep(1)
+        username.send_keys(self.username)
+        sleep(1)
         password.send_keys(self.password)
-        time.sleep(2.4)
 
-    def get_gap(self, image1, image2):
-        """
-        获取缺口偏移量
-        :param image1: 不带缺口图片
-        :param image2: 带缺口图片
-        :return:
-        """
-        left = LEFT_INIT
-        top = TOP_INIT
-        # 裁剪验证码多余的像素
-        for i in range(left, image1.size[0] - RIGHT_INIT):
-            for j in range(top, image1.size[1] - BOTTOM_INIT):
-                if not self.is_pixel_equal(image1, image2, i, j):
-                    left = i
-                    return left
-        return left
-
-    def is_pixel_equal(self, image1, image2, x, y):
+    def is_pixel_equal(self, img1, img2, x, y):
         """
         判断两个像素是否相同
-        :param image1: 图片1
-        :param image2: 图片2
-        :param x: 位置x
-        :param y: 位置y
+        :param img1: 原始验证码
+        :param img2: 缺块验证码
+        :param x: 像素点的x坐标
+        :param y: 像素点的y坐标
         :return: 像素是否相同
         """
-        # 取两个图片的像素点
-        pixel1 = image1.load()[x, y]
-        pixel2 = image2.load()[x, y]
-        threshold = 60
+        pixel1 = img1.load()[x-1, y]
+        pixel2 = img2.load()[x-1, y]
+        threshold = 100
         if abs(pixel1[0] - pixel2[0]) < threshold and abs(pixel1[1] - pixel2[1]) < threshold and abs(
                 pixel1[2] - pixel2[2]) < threshold:
             return True
         else:
             return False
 
+    def get_gap(self, img1, img2):
+        """
+        获取缺口偏移量
+        :param img1: 原始验证码
+        :param img2: 缺块验证码
+        :return: 第二个缺块的左侧的x坐标
+        """
+        left = 60   # 大致忽略掉第一个缺块
+        for i in range(left, img1.size[0]):
+            for j in range(img1.size[1]):
+                if not self.is_pixel_equal(img1, img2, i, j):
+                    left = i
+                    return left
+        return left
+
     def get_track(self, distance):
         """
-        根据偏移量获取移动轨迹
-        :param distance: 偏移量
-        :return: 移动轨迹
+        获取滑块移动轨迹的列表
+        :param distance: 第二个缺块的左侧的x坐标
+        :return: 滑块移动轨迹列表
         """
-        # 移动轨迹
         track = []
-        # 当前位移
         current = 0
-        # 减速阈值
-        mid = distance * 7 / 11
-        # 计算间隔
-        t = 0.3
-        # 初速度
+        mid = distance * 2 / 3
+        t = 0.2
         v = 0
-
+        distance += 10  # 使滑块划过目标地点, 然后回退
         while current < distance:
             if current < mid:
-                # 加速度为正2
-                a = 3
+                a = random.randint(1, 3)
             else:
-                # 加速度为负3
-                a = -4
-            # 初速度v0
+                a = -random.randint(3, 5)
             v0 = v
-            # 当前速度v = v0 + at
             v = v0 + a * t
-            # 移动距离x = v0t + 1/2 * a * t^2
-            move = v0 * t + 1 / 2 * a * t * t
-            # 当前位移
+            move = v0 * t + 0.5 * a * t * t
             current += move
-            # 加入轨迹
             track.append(round(move))
+        for i in range(2):
+            track.append(-random.randint(2, 3))
+        for i in range(2):
+            track.append(-random.randint(1, 4))
+        print(track)
         return track
 
-    def move_to_gap(self, button, track):
+    def move_button(self, button, track):
         """
-        拖动滑块到缺口处
-        :param button: 滑块
-        :param track: 轨迹
-        :return:
-        """
-        ActionChains(self.browser).click_and_hold(button).perform()
-        for x in track:
-            ActionChains(self.browser).move_by_offset(xoffset=x, yoffset=0).perform()
-        time.sleep(0.9)
-        ActionChains(self.browser).release().perform()
-
-    def login(self):
-        """
-        登录
+        将滑块拖动到指定位置
+        :param button: 滑动块
+        :param track: 滑块运动轨迹列表
         :return: None
         """
-        submit = self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'btn-login')))
-        submit.click()
-        time.sleep(10)
-        print('登录成功')
+        ActionChains(self.browser).click_and_hold(button).perform()
+        for i in track:
+            ActionChains(self.browser).move_by_offset(xoffset=i, yoffset=0).perform()
+            sleep(0.0005)
+        sleep(0.5)
+        ActionChains(self.browser).release().perform()
 
     def crack(self):
-        # 输入用户名密码
-        self.open()
-        time.sleep(1)
-        # 获取验证按钮
-        button = self.get_geetest_button()
-        # 模拟悬停
-        self.get_see_image(button)
-        # 获取验证码图片
-        image1 = self.get_geetest_image('captcha1.png')
-        # 点按呼出缺口
-        button.click()
-        # 获取带缺口的验证码图片
-        image2 = self.get_geetest_image('captcha2.png')
-        # 获取缺口位置
-        gap = self.get_gap(image1, image2)
-        print('缺口位置', gap)
-        # 减去缺口位移
-        gap -= BORDER
-        # 获取移动轨迹
-        track = self.get_track(gap)
-        print('滑动轨迹', track)
-        # 拖动滑块
-        self.move_to_gap(button, track)
-
-        try:
-            success = self.wait.until(
-                EC.text_to_be_present_in_element((By.CLASS_NAME, 'gt_success'), '验证成功'))
-            print(success)
-            self.login()
-        except:
-            self.crack()
+        """
+        串接整个流程:
+            1. 输入账号密码
+            2. 获取滑动块
+            3. 获取两张验证码图片
+            4. 获取滑块移动轨迹
+            5. 将滑块拖动至指定位置
+        :return:
+        """
+        self.login()
+        button = self.get_button()
+        captcha = self.get_geetest_image(button)
+        left = self.get_gap(captcha[0], captcha[1])
+        print(left)
+        track = self.get_track(left)
+        # 如果尝试登陆失败, 则重新验证, 最多三次
+        times = 0
+        while times < 3:
+            self.move_button(button, track)
+            try:
+                success = self.wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, 'gt_info_type'), '验证通过:'))
+                print(success)
+            except TimeoutException as e:
+                times += 1
+                print('fail')
+            else:
+                print('success')
+                return None
 
 
 if __name__ == '__main__':
-    crack = CrackGeetest()
-    crack.crack()
+    ACCOUNT = input('请输入您的账号:')
+    PASSOWRD = input('请输入您的密码:')
+
+    test = BiliBili(ACCOUNT, PASSOWRD)    # 输入账号和密码
+    test.crack()
