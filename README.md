@@ -41,7 +41,7 @@
 ## Done
 
 - [x] [Facebook](https://www.facebook.com/)
-- [x] [Twitter](https://twitter.com/)
+- [x] [无需身份验证即可抓取Twitter前端API](https://twitter.com/)
 - [x] [微博网页版](http://weibo.com)
 - [x] [知乎](http://zhihu.com)
 - [x] [QQZone](https://qzone.qq.com/)
