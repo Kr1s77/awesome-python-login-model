@@ -1,3 +1,5 @@
+#！/usr/bin/env python
+# -*- coding:utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -5,9 +7,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import time
 
+ """
+ info:
+ author:CriseLYJ
+ github:https://github.com/CriseLYJ/
+ update_time:2019-3-7
+ """
+
 class loginTB(object):
     def __init__(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         # 设置一个智能等待
         self.wait = WebDriverWait(self.driver,5)
