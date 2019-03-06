@@ -2,12 +2,12 @@ import  requests , time
 import  hmac ,json
 from bs4 import BeautifulSoup
 from hashlib import sha1
- """
- info:
- author:CriseLYJ
- github:https://github.com/CriseLYJ/
- update_time:2019-3-6
- """
+"""
+info:
+author:CriseLYJ
+github:https://github.com/CriseLYJ/
+update_time:2019-3-6
+"""
  
 def get_captcha(data,need_cap):
     ''' 处理验证码 '''

@@ -2,12 +2,12 @@ import requests
 import hashlib
 import time
 
- """
- info:
- author:CriseLYJ
- github:https://github.com/CriseLYJ/
- update_time:2019-3-7
- """
+"""
+info:
+author:CriseLYJ
+github:https://github.com/CriseLYJ/
+update_time:2019-3-7
+"""
 
 
 def get_login(phone, pwd):

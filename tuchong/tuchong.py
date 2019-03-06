@@ -6,12 +6,12 @@ import os
 from hashlib import md5
 from requests.exceptions import RequestException
 
- """
- info:
- author:CriseLYJ
- github:https://github.com/CriseLYJ/
- update_time:2019-3-6
- """
+"""
+info:
+author:CriseLYJ
+github:https://github.com/CriseLYJ/
+update_time:2019-3-6
+"""
 
 headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
- info:
- author:CriseLYJ
- github:https://github.com/CriseLYJ/
- update_time:2019-3-7
- """
+info:
+author:CriseLYJ
+github:https://github.com/CriseLYJ/
+update_time:2019-3-7
+"""
 
 import time #用来延时
 from selenium import webdriver

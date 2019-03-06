@@ -9,6 +9,15 @@ import requests
 import hashlib
 from bs4 import BeautifulSoup
 
+
+"""
+info:
+author:CriseLYJ
+github:https://github.com/CriseLYJ/
+update_time:2019-3-6
+"""
+
+
 class Lagou_login(object):
     def __init__(self):
         self.session = requests.session()

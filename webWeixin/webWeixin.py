@@ -7,12 +7,12 @@ import requests
 import xml.dom.minidom
 import json
 
- """
- info:
- author:CriseLYJ
- github:https://github.com/CriseLYJ/
- update_time:2019-3-6
- """
+"""
+info:
+author:CriseLYJ
+github:https://github.com/CriseLYJ/
+update_time:2019-3-6
+"""
 
 session = requests.session()
 headers = {
