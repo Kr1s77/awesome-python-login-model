@@ -112,8 +112,8 @@ class BiliBili():
         :param y: 像素点的y坐标
         :return: 像素是否相同
         """
-        pixel1 = img1.load()[x-1, y]
-        pixel2 = img2.load()[x-1, y]
+        pixel1 = img1.load()[x, y]
+        pixel2 = img2.load()[x, y]
         threshold = 100
         if abs(pixel1[0] - pixel2[0]) < threshold and abs(pixel1[1] - pixel2[1]) < threshold and abs(
                 pixel1[2] - pixel2[2]) < threshold:
