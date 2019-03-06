@@ -20,17 +20,18 @@
 
 ****
 
-# Website_login_mode
-收集了一些各大网站登陆方式， 和一些网站的爬虫程序，有的是通过selenium登录，有的是通过抓包直接模拟登录，有的是利用scrapy,希望对小白有所帮助,本项目用于研究和分享各大网站的模拟登陆方式，和爬虫程序，会持续更新。。。
+# 🌟Website_login_mode
+🌟收集了一些各大网站登陆方式， 和一些网站的爬虫程序，有的是通过selenium登录，有的是通过抓包直接模拟登录，有的是利用scrapy,希望对小白有所帮助,本项目用于研究和分享各大网站的模拟登陆方式，和爬虫程序，会持续更新。。。
 
 ## 模拟登录一些常见的网站和爬取相应的信息
 
 
 ## About
 
-模拟登陆基本采用的是直接登录或者使用selenium+webdriver的方式，有的网站直接登录难度很大，比如qq空间，如果采用selenium就相对轻松一些。
+模拟登陆基本采用的是直接登录或者使用selenium+webdriver的方式，有的网站直接登录难度很大，比如qq空间，bilibili等如果采用selenium就相对轻松一些。
 
 虽然在登录的时候采用的是selenium,为了效率，我们可以在登录过后得到的cookie维护起来，然后调用requests或者scrapy等进行数据采集，这样数据采集的速度可以得到保证。
+
 
 ## Done
 
@@ -71,6 +72,8 @@
 
 ![](./image/Jietu20190306-232303.jpg)
 
+- guoke.spider使用需谨慎，下载的比较快！10秒能下载一堆，截图我就不展示了，已经删除☺
+
 ## tips of pull request 
 
 - 欢迎大家一起来 pull request 
@@ -97,5 +100,5 @@
 
 ## Written at the end
 - I need your support.
-- And I think you can give me a ``star``!
+- And I think you can give me a 🌟``star``!
 
