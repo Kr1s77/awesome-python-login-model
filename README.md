@@ -24,12 +24,6 @@
 收集了一些各大网站登陆方式，有的是通过selenium登录，有的是通过抓包直接模拟登录，希望对小白有所帮助,本项目用于研究和分享各大网站的模拟登陆方式。
 
 ## 模拟登录一些常见的网站
-主要基于以下的 Python 的第三 library 
-
-1. requests
-2. selenium 
-3. rsa
-4. phantomjs
 
 
 ## About
@@ -54,7 +48,6 @@
 - [x] [拉钩](https://www.lagou.com/)
 - [x] [Bilibili](https://www.bilibili.com/)
 - [x] [豆瓣](https://www.douban.com/)
-- [x] [V2EX](https://www.v2ex.com/)
 - [x] [Baidu2](www.baidu.com)
 - [x] [猎聘网](https://www.liepin.com/)
 - [x] [微信网页版](https://wx.qq.com/)
