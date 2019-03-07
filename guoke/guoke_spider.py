@@ -73,7 +73,7 @@ def save_article(content):
                 f.write('\n'.join([str(content.get('title')),str(content.get('autor')),str(content.get('article'))]))
                 print('Downloaded article path is %s' % file_name)
         else:
-            print('Already Downloaded', file_path)
+            print('Already Downloaded', file_name)
     except requests.ConnectionError:
         print('Failed to Save Image，item %s' % content)
 
