@@ -52,7 +52,7 @@
 - [x] [Baidu2](www.baidu.com)
 - [x] [猎聘网](https://www.liepin.com/)
 - [x] [微信网页版登录并获取好友列表](https://wx.qq.com/)
-- [x] [gihub](https://github.com/)
+- [x] [Github](https://github.com/)
 - [x] [爬取图虫相应的图片](https://tuchong.com/)
 
 ## show
