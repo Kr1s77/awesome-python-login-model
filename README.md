@@ -76,6 +76,10 @@
 - taobao.py为模拟登录
 - 剩下的文件为爬虫
 
+### Github
+
+![](./image/github.jpg)
+
 ```
 1. 爬取淘宝各子标签，按销量排名商品信息，按分类保存至MongoDB
 2. 通过pandas进行数据分析
