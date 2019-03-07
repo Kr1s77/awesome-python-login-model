@@ -123,6 +123,8 @@
 ## Acknowledgement
 - Thanks for all!
 
+## 在这里还是要特别感谢V2EX上的所有人！多谢🙏,也感谢从其他地方过来的所有人，感谢🙏
+
 ## Written at the end
 - I need your support.
 - And I think you can give me a 🌟``star``!
