@@ -33,7 +33,7 @@
 虽然在登录的时候采用的是selenium,为了效率，我们可以在登录过后得到的cookie维护起来，然后调用requests或者scrapy等进行数据采集，这样数据采集的速度可以得到保证。
 
 
-## Done
+## Completed
 
 - [x] [Facebook](https://www.facebook.com/)
 - [x] [无需身份验证即可抓取Twitter前端API](https://twitter.com/)
