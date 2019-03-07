@@ -25,8 +25,6 @@
 
 ## 模拟登录一些常见的网站和爬取相应的信息
 
-![](./image/yanjing.jpg)
-
 
 ## About
 
@@ -127,6 +125,7 @@
 
 ## Acknowledgments
 - Thanks for all!
+![](./image/yanjing.png)
 
 ### 在这里还是要特别感谢V2EX上的所有人！多谢🙏,也感谢从其他地方过来的所有人，感谢🙏
 
