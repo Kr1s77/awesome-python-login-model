@@ -3,7 +3,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
 # 获取登陆页面
 session = requests.session()
 url = 'https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn'
@@ -38,6 +37,7 @@ def get_post_data():
 def login(post_data):
     session.post(url, data=post_data, headers=get_post_headers())
     return session
+
 
 if __name__ == '__main__':
     session = login(get_post_data())

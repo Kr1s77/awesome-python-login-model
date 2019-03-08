@@ -9,7 +9,6 @@ import requests
 import hashlib
 from bs4 import BeautifulSoup
 
-
 """
 info:
 author:CriseLYJ
@@ -28,21 +27,20 @@ class Lagou_login(object):
                                       ' Core/1.53.4882.400 QQBrowser/9.7.13059.400',
                         'X-Requested-With': 'XMLHttpRequest'}
 
-    #密码加密
+    # 密码加密
     def encryptPwd(self, passwd):
         # 对密码进行了md5双重加密
         passwd = hashlib.md5(passwd.encode('utf-8')).hexdigest()
         # veennike 这个值是在js文件找到的一个写死的值
-        passwd = 'veenike'+passwd+'veenike'
+        passwd = 'veenike' + passwd + 'veenike'
         passwd = hashlib.md5(passwd.encode('utf-8')).hexdigest()
         return passwd
 
-
-    #获取请求token
+    # 获取请求token
     def getTokenCode(self):
         login_page = 'https://passport.lagou.com/login/login.html'
 
-        data = self.session.get(login_page, headers= self.HEADERS)
+        data = self.session.get(login_page, headers=self.HEADERS)
 
         soup = BeautifulSoup(data.content, "lxml", from_encoding='utf-8')
         '''
@@ -62,7 +60,6 @@ class Lagou_login(object):
         anti_token['X-Anit-Forge-Code'] = re.findall(r'= \'(.+?)\'', anti[2])[0]
 
         return anti_token
-
 
     # 人工读取验证码并返回
     def getCaptcha(self):
@@ -84,19 +81,18 @@ class Lagou_login(object):
         print('你输入的验证码是:% s' % captcha)
         return captcha
 
-
     # 登陆操作
     def login(self, user, passwd, captchaData=None, token_code=None):
         postData = {'isValidate': 'true',
                     'password': passwd,
                     # 如需验证码,则添加上验证码
-                    'request_form_verifyCode': (captchaData if captchaData!=None else ''),
+                    'request_form_verifyCode': (captchaData if captchaData != None else ''),
                     'submit': '',
                     'username': user
                     }
         login_url = 'https://passport.lagou.com/login/login.json'
 
-        #头信息添加tokena
+        # 头信息添加tokena
         login_headers = self.HEADERS.copy()
         token_code = self.getTokenCode() if token_code is None else token_code
         login_headers.update(token_code)
@@ -110,7 +106,7 @@ class Lagou_login(object):
         elif data['state'] == 10010:
             print(data['message'])
             captchaData = self.getCaptcha()
-            token_code = {'X-Anit-Forge-Code' : data['submitCode'], 'X-Anit-Forge-Token' : data['submitToken']}
+            token_code = {'X-Anit-Forge-Code': data['submitCode'], 'X-Anit-Forge-Token': data['submitToken']}
             return self.login(user, passwd, captchaData, token_code)
         else:
             print(data['message'])

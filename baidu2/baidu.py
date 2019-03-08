@@ -14,7 +14,6 @@ import rsa
 import base64
 import time
 
-
 """
 1. 百度的模拟登录，请确保你的账号能在浏览器下登录不需要验证码
  百度的三次登录错误后，才会出现验证码，但是还有一种情况是百度的账号异常
@@ -48,7 +47,7 @@ def get_gid():
     gid = list(gid)
     for xy in range(len(gid)):
         if gid[xy] in "xy":
-            r = int(random.random()*16)
+            r = int(random.random() * 16)
             if gid[xy] == "x":
                 gid[xy] = hex(r).replace("0x", '').upper()
             else:
@@ -121,6 +120,7 @@ def get_token():
     # print(token_content_all)
     return token_content_all['data']['token']
 
+
 token = (get_token())
 
 
@@ -189,11 +189,11 @@ def login(username, password, key):
     #     f.write(html_index.content)
     #     f.close()
 
+
 try:
     input = raw_input
 except:
     pass
-
 
 if __name__ == "__main__":
     username = input("请输入你的手机号或者邮箱\n >:")

@@ -36,17 +36,19 @@ def get_tweets(user, pages=25):
                 tweetId = tweet.find(
                     '.js-permalink')[0].attrs['data-conversation-id']
                 time = datetime.fromtimestamp(
-                    int(tweet.find('._timestamp')[0].attrs['data-time-ms'])/1000.0)
+                    int(tweet.find('._timestamp')[0].attrs['data-time-ms']) / 1000.0)
                 interactions = [x.text for x in tweet.find(
                     '.ProfileTweet-actionCount')]
-                replies = int(interactions[0].split(" ")[0].replace(comma, "").replace(dot,""))
+                replies = int(interactions[0].split(" ")[0].replace(comma, "").replace(dot, ""))
                 retweets = int(interactions[1].split(" ")[
-                               0].replace(comma, "").replace(dot,""))
-                likes = int(interactions[2].split(" ")[0].replace(comma, "").replace(dot,""))
+                                   0].replace(comma, "").replace(dot, ""))
+                likes = int(interactions[2].split(" ")[0].replace(comma, "").replace(dot, ""))
                 hashtags = [hashtag_node.full_text for hashtag_node in tweet.find('.twitter-hashtag')]
-                urls = [url_node.attrs['data-expanded-url'] for url_node in tweet.find('a.twitter-timeline-link:not(.u-hidden)')]
-                photos = [photo_node.attrs['data-image-url'] for photo_node in tweet.find('.AdaptiveMedia-photoContainer')]
-                
+                urls = [url_node.attrs['data-expanded-url'] for url_node in
+                        tweet.find('a.twitter-timeline-link:not(.u-hidden)')]
+                photos = [photo_node.attrs['data-image-url'] for photo_node in
+                          tweet.find('.AdaptiveMedia-photoContainer')]
+
                 videos = []
                 video_nodes = tweet.find(".PlayableMedia-player")
                 for node in video_nodes:
@@ -57,11 +59,11 @@ def get_tweets(user, pages=25):
                             video_id = tmp[:tmp.index('.jpg')]
                             videos.append({'id': video_id})
                 tweets.append({'tweetId': tweetId, 'time': time, 'text': text,
-                               'replies': replies, 'retweets': retweets, 'likes': likes, 
+                               'replies': replies, 'retweets': retweets, 'likes': likes,
                                'entries': {
-                                    'hashtags': hashtags, 'urls': urls,
-                                    'photos': photos, 'videos': videos
-                                }
+                                   'hashtags': hashtags, 'urls': urls,
+                                   'photos': photos, 'videos': videos
+                               }
                                })
 
             last_tweet = html.find('.stream-item')[-1].attrs['data-item-id']
@@ -72,7 +74,7 @@ def get_tweets(user, pages=25):
                     yield tweet
 
             r = session.get(
-                url, params = {'max_position': last_tweet}, headers = headers)
+                url, params={'max_position': last_tweet}, headers=headers)
             pages += -1
 
     yield from gen_tweets(pages)

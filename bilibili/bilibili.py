@@ -16,11 +16,13 @@ github:https://github.com/CriseLYJ/
 update_time:2019-3-7
 """
 
+
 class BiliBili():
     """
     登陆B站, 处理极验验证码
     电脑的缩放比例需要为100%, 否则验证码图片的获取会出现问题
     """
+
     def __init__(self, username, password):
         """
         初始化
@@ -128,7 +130,7 @@ class BiliBili():
         :param img2: 缺块验证码
         :return: 第二个缺块的左侧的x坐标
         """
-        left = 60   # 大致忽略掉第一个缺块
+        left = 60  # 大致忽略掉第一个缺块
         for i in range(left, img1.size[0]):
             for j in range(img1.size[1]):
                 if not self.is_pixel_equal(img1, img2, i, j):
@@ -214,5 +216,5 @@ if __name__ == '__main__':
     ACCOUNT = input('请输入您的账号:')
     PASSOWRD = input('请输入您的密码:')
 
-    test = BiliBili(ACCOUNT, PASSOWRD)    # 输入账号和密码
+    test = BiliBili(ACCOUNT, PASSOWRD)  # 输入账号和密码
     test.crack()

@@ -1,4 +1,4 @@
-#！/usr/bin/env python
+# ！/usr/bin/env python
 # -*- coding:utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -11,34 +11,35 @@ import time
 info:
 author:CriseLYJ
 github:https://github.com/CriseLYJ/
-update_time:2019-3-7
+update_time:2019-3-8
 """
+
 
 class loginTB(object):
     def __init__(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         # 设置一个智能等待
-        self.wait = WebDriverWait(self.driver,5)
+        self.wait = WebDriverWait(self.driver, 5)
 
-    def login(self,key,pw):
+    def login(self, key, pw):
         url = 'https://login.taobao.com/member/login.jhtml'
         self.driver.get(url)
         try:
             # 寻找密码登陆按钮
             login_links = self.wait.until(
-                EC.presence_of_element_located((By.XPATH,"//a[text()='密码登录']"))
+                EC.presence_of_element_located((By.XPATH, "//a[text()='密码登录']"))
             )
             login_links.click()
         except TimeoutException as e:
-            print("找不到登陆入口，原因是：",e)
+            print("找不到登陆入口，原因是：", e)
         else:
             # 输入账号密码
             input_key = self.wait.until(
-                EC.presence_of_element_located((By.XPATH,"//input[@name='TPL_username']"))
+                EC.presence_of_element_located((By.XPATH, "//input[@name='TPL_username']"))
             )
             input_pw = self.wait.until(
-                EC.presence_of_element_located((By.XPATH,"//input[@name='TPL_password']"))
+                EC.presence_of_element_located((By.XPATH, "//input[@name='TPL_password']"))
             )
             input_key.clear()
             input_pw.clear()
@@ -48,7 +49,7 @@ class loginTB(object):
             try:
                 # 试探能否找到个人信息，如果找不到说明登录失败
                 user_info = self.wait.until(
-                    EC.presence_of_element_located((By.XPATH,"//div[@class='m-userinfo']"))
+                    EC.presence_of_element_located((By.XPATH, "//div[@class='m-userinfo']"))
                 )
                 print('已经登陆成功，进入了个人中心')
             except TimeoutException:
@@ -59,7 +60,7 @@ class loginTB(object):
                     try:
                         # 尝试找手机验证框，如果能找到说明要手机验证
                         frame = self.wait.until(
-                            EC.presence_of_element_located((By.XPATH,'//div[@class="login-check-left"]/iframe'))
+                            EC.presence_of_element_located((By.XPATH, '//div[@class="login-check-left"]/iframe'))
                         )
                         print('本次登录需要进行手机验证...')
                     except TimeoutException:
@@ -67,20 +68,20 @@ class loginTB(object):
                         print('登录失败，目测是账号或密码有误，请检查后重新登录...')
                         key = input('请重新输入账号：').strip()
                         pw = input('请重新输入密码：').strip()
-                        self.login(key,pw)
+                        self.login(key, pw)
                     else:
                         self.driver.switch_to.frame(frame)
                         phone_num = self.wait.until(
-                            EC.presence_of_element_located((By.XPATH,'//button[@id="J_GetCode"]'))
+                            EC.presence_of_element_located((By.XPATH, '//button[@id="J_GetCode"]'))
                         )
                         phone_num.click()
                         phone_key = input('请输入手机验证码：').strip()
                         key_send = self.wait.until(
-                            EC.presence_of_element_located((By.XPATH,'//input[@id="J_Phone_Checkcode"]'))
+                            EC.presence_of_element_located((By.XPATH, '//input[@id="J_Phone_Checkcode"]'))
                         )
                         key_send.send_keys(phone_key)
                         go_button = self.wait.until(
-                            EC.presence_of_element_located((By.XPATH,'//input[@type="submit"]'))
+                            EC.presence_of_element_located((By.XPATH, '//input[@type="submit"]'))
                         )
                         go_button.click()
                         user_info = self.wait.until(
@@ -88,8 +89,9 @@ class loginTB(object):
                         )
                         print('手机验证登陆成功！！！')
 
+
 if __name__ == '__main__':
     t = time.time()
     l = loginTB()
-    l.login('username','password')
-    print('登录完成，耗时{:.2f}秒'.format(float(time.time()-t)))
+    l.login('username', 'password')
+    print('登录完成，耗时{:.2f}秒'.format(float(time.time() - t)))

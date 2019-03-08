@@ -15,11 +15,11 @@ class Login(object):
     def __init__(self):
         base_url = 'https://github.com/'
         # 登陆 url 
-        self.login_url = base_url +'login'
+        self.login_url = base_url + 'login'
         # 提交表单的 api
-        self.post_url = base_url +'session'
+        self.post_url = base_url + 'session'
         # 个人资料页面的 url
-        self.logined_url = base_url +'settings/profile'
+        self.logined_url = base_url + 'settings/profile'
         # 构造一个会话对象
         self.session = requests.Session()
         # 自定义请求头
@@ -36,7 +36,7 @@ class Login(object):
         doc = pq(response.text)
         token = doc('input[name="authenticity_token"]').attr("value").strip()
         return token
-    
+
     def login(self, email, password):
         token = self.token()
         # 构造表单数据
@@ -71,7 +71,7 @@ class Login(object):
         Repositories = doc("div.Box-body > ul > li").text().split()
         for Repositorie in Repositories:
             print(Repositorie)
-    
+
     def profile(self, html):
         doc = pq(html)
         page_title = doc("title").text()
@@ -88,6 +88,7 @@ class Login(object):
         # 输入的密码不可见，注意密码一定不能错
         password = getpass.getpass("password:")
         self.login(email=email, password=password)
+
 
 if __name__ == "__main__":
     login = Login()

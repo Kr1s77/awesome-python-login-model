@@ -6,7 +6,6 @@ import execjs
 import rsa
 import base64
 
-
 js_path = 'login.js'
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 '
                          '(KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
@@ -37,7 +36,7 @@ def get_callback():
 
 
 def _get_curtime():
-    return int(time.time()*1000)
+    return int(time.time() * 1000)
 
 
 # 抓包也不是百分百可靠啊,这里?getapi一定要挨着https://passport.baidu.com/v2/api/写，才会到正确的路由
@@ -53,11 +52,12 @@ def get_token(gid, callback):
         'logintype': 'basicLogin',
         'callback': callback
     }
-    headers.update(dict(Referer='http://pan.baidu.com/', Accept='*/*', Connection='keep-alive', Host='passport.baidu.com'))
+    headers.update(
+        dict(Referer='http://pan.baidu.com/', Accept='*/*', Connection='keep-alive', Host='passport.baidu.com'))
     resp = session.get(url='https://passport.baidu.com/v2/api/?getapi', params=get_data, headers=headers)
     if resp.status_code == 200 and callback in resp.text:
         # 如果json字符串中带有单引号，会解析出错，只有统一成双引号才可以正确的解析
-        #data = eval(re.search(r'.*?\((.*)\)', resp.text).group(1))
+        # data = eval(re.search(r'.*?\((.*)\)', resp.text).group(1))
         data = json.loads(re.search(r'.*?\((.*)\)', resp.text).group(1).replace("'", '"'))
         return data.get('data').get('token')
     else:
@@ -141,13 +141,14 @@ def login(token, gid, callback, rsakey, username, password):
               's_K__oJTLlOSF9oXyne-LDQIAHcvLmJSM2JnXkMKDzpHOns2dwvap9obnlOeQ_43pCAIAINzY4uIKCgpdwK7Lv9uyw'
               'ar1heSX5LvXuN-22IfhjvyRDQIAHcvLkGx0IGEvaDp7Nmk2ZjVlOg5RDn4fbB9oB3URDQIAHcvLrOnxpeSq7b_-s'
               '-yz47Dgv4vUi_ua6ZrtgvCUDQIAHcvLS7au-rv1suCh7LPsvO-_4NSL1KTFtsWy3a_L',
-        'callback': 'parent.'+callback
+        'callback': 'parent.' + callback
     }
     resp = session.post(url='https://passport.baidu.com/v2/api/?login', data=post_data, headers=headers)
     if 'err_no=0' in resp.text:
         print('登录成功')
     else:
         print('登录失败')
+
 
 if __name__ == '__main__':
     name = input('请输入用户名:\n')

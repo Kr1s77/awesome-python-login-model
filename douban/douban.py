@@ -12,6 +12,7 @@ from urllib.request import urlretrieve
 import requests
 from bs4 import BeautifulSoup
 from os import remove
+
 try:
     import cookielib
 except:
@@ -26,12 +27,12 @@ url = 'https://accounts.douban.com/login'
 datas = {'source': 'index_nav',
          'remember': 'on'}
 
-headers = {'Host':'www.douban.com',
+headers = {'Host': 'www.douban.com',
            'Referer': 'https://www.douban.com/',
            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55.0',
            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
            'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
-           'Accept-Encoding':'gzip, deflate, br'}
+           'Accept-Encoding': 'gzip, deflate, br'}
 
 # 尝试使用cookie信息
 session = requests.session()
@@ -40,7 +41,7 @@ try:
     session.cookies.load(ignore_discard=True)
 except:
     print("Cookies未能加载")
-    #cookies加载不成功，则输入账号密码信息
+    # cookies加载不成功，则输入账号密码信息
     datas['form_email'] = input('Please input your account:')
     datas['form_password'] = input('Please input your password:')
 
@@ -91,12 +92,13 @@ def login():
     page = login_page.text
     soup = BeautifulSoup(page, "html.parser")
     result = soup.findAll('div', attrs={'class': 'title'})
-    #进入豆瓣登陆后页面，打印热门内容
+    # 进入豆瓣登陆后页面，打印热门内容
     for item in result:
         print(item.find('a').get_text())
     # 保存 cookies 到文件，
     # 下次可以使用 cookie 直接登录，不需要输入账号和密码
     session.cookies.save()
+
 
 if __name__ == '__main__':
     if isLogin():

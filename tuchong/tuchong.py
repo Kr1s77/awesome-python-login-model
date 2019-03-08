@@ -1,6 +1,4 @@
 import requests
-import json
-import time
 import re
 import os
 from hashlib import md5
@@ -23,6 +21,7 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
 }
 
+
 # 获取imageID
 def get_imageID(term, page):
     try:
@@ -34,6 +33,7 @@ def get_imageID(term, page):
             return parse_imgID(json_imageid)
     except ConnectionError:
         return None
+
 
 # 解析imageID里面的图片id
 def parse_imgID(imageID):
@@ -60,26 +60,29 @@ def get_ImageJPG(id):
         except ConnectionError:
             return None
 
+
 # 解析html里面的图片url
 def parse_imgURL(html):
     if html:
         print('解析HTML图片URL...')
-        url = re.findall('<div.*?class="image-cover".*?<img.*?src="(.*?)">.*?</div>',  html, re.S)
-        #url = re.findall('<title>(.*?)</title>', html, re.S)
+        url = re.findall('<div.*?class="image-cover".*?<img.*?src="(.*?)">.*?</div>', html, re.S)
+        # url = re.findall('<title>(.*?)</title>', html, re.S)
         for item in url:
             print("准备下载...", item)
             download_image(item)
     return None
 
+
 def download_image(url):
     try:
-        urls = 'https:' + url 
+        urls = 'https:' + url
         ir = requests.get(urls)
         if ir.status_code == 200:
             save_image(ir.content)
         return None
     except RequestException:
         return None
+
 
 def save_image(content):
     file_path = '{0}/{1}.{2}'.format(os.getcwd(), md5(content).hexdigest(), 'jpg')
@@ -89,11 +92,11 @@ def save_image(content):
             f.close()
             print('下载成功----------------------')
 
+
 def main():
     term = input('输入想要搜索的内容: ')
     for i in range(1, 7):
         get_imageID(term, i)
-
 
 
 if __name__ == '__main__':

@@ -16,7 +16,7 @@ update_time:2019-3-6
 
 session = requests.session()
 headers = {
-    'User-Agent' : 'Mozilla/5.0 (Windows NT 5.1; rv:33.0) Gecko/20100101 Firefox/33.0'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 5.1; rv:33.0) Gecko/20100101 Firefox/33.0'
 }
 
 QRImgPath = os.path.split(os.path.realpath(__file__))[0] + os.sep + 'webWeixinQr.jpg'
@@ -36,7 +36,7 @@ SyncKey = ''
 
 
 def getUUID():
-    global uuid,session
+    global uuid, session
 
     url = 'https://login.weixin.qq.com/jslogin'
     params = {
@@ -176,10 +176,9 @@ def login():
 
 
 def webwxinit():
-
     url = base_uri + \
-        '/webwxinit?pass_ticket=%s&skey=%s&r=%s' % (
-            pass_ticket, skey, int(time.time()))
+          '/webwxinit?pass_ticket=%s&skey=%s&r=%s' % (
+              pass_ticket, skey, int(time.time()))
     params = {
         'BaseRequest': BaseRequest
     }
@@ -188,7 +187,7 @@ def webwxinit():
     h['ContentType'] = 'application/json; charset=UTF-8'
     response = session.post(url, data=json.dumps(params), headers=h)
     data = response.content.decode('utf-8')
-    #print(data)
+    # print(data)
 
     global ContactList, My, SyncKey
 
@@ -211,10 +210,9 @@ def webwxinit():
 
 
 def webwxgetcontact():
-
     url = base_uri + \
-        '/webwxgetcontact?pass_ticket=%s&skey=%s&r=%s' % (
-            pass_ticket, skey, int(time.time()))
+          '/webwxgetcontact?pass_ticket=%s&skey=%s&r=%s' % (
+              pass_ticket, skey, int(time.time()))
 
     h = headers
     h['ContentType'] = 'application/json; charset=UTF-8'
@@ -226,8 +224,12 @@ def webwxgetcontact():
     MemberList = dic['MemberList']
 
     # 倒序遍历,不然删除的时候出问题..
-    SpecialUsers = ["newsapp", "fmessage", "filehelper", "weibo", "qqmail", "tmessage", "qmessage", "qqsync", "floatbottle", "lbsapp", "shakeapp", "medianote", "qqfriend", "readerapp", "blogapp", "facebookapp", "masssendapp",
-                    "meishiapp", "feedsapp", "voip", "blogappweixin", "weixin", "brandsessionholder", "weixinreminder", "wxid_novlwrv3lqwv11", "gh_22b87fa7cb3c", "officialaccounts", "notification_messages", "wxitil", "userexperience_alarm"]
+    SpecialUsers = ["newsapp", "fmessage", "filehelper", "weibo", "qqmail", "tmessage", "qmessage", "qqsync",
+                    "floatbottle", "lbsapp", "shakeapp", "medianote", "qqfriend", "readerapp", "blogapp", "facebookapp",
+                    "masssendapp",
+                    "meishiapp", "feedsapp", "voip", "blogappweixin", "weixin", "brandsessionholder", "weixinreminder",
+                    "wxid_novlwrv3lqwv11", "gh_22b87fa7cb3c", "officialaccounts", "notification_messages", "wxitil",
+                    "userexperience_alarm"]
     for i in range(len(MemberList) - 1, -1, -1):
         Member = MemberList[i]
         if Member['VerifyFlag'] & 8 != 0:  # 公众号/服务号
@@ -241,8 +243,8 @@ def webwxgetcontact():
 
     return MemberList
 
-def main():
 
+def main():
     if not getUUID():
         print('获取uuid失败')
         return
@@ -258,7 +260,7 @@ def main():
     if not login():
         print('登录失败')
         return
-    #登录完成, 下面查询好友
+    # 登录完成, 下面查询好友
     if not webwxinit():
         print('初始化失败')
         return
@@ -267,12 +269,9 @@ def main():
 
     print('通讯录共%s位好友' % len(MemberList))
 
-    for x in MemberList :
+    for x in MemberList:
         sex = '未知' if x['Sex'] == 0 else '男' if x['Sex'] == 1 else '女'
         print('昵称:%s, 性别:%s, 备注:%s, 签名:%s' % (x['NickName'], sex, x['RemarkName'], x['Signature']))
-
-
-
 
 
 if __name__ == '__main__':
