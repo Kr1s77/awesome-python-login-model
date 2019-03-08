@@ -9,7 +9,26 @@
 <br>
 
 <p align="center">"<i>Did you know all your doors were locked?</i>" - Riddick (The Chronicles of Riddick)</p>
+<br>
 
+<p align="center">
+  <a href="https://github.com/CriseLYJ/awesome-python-login-model/tree/master">
+    <img src="https://img.shields.io/badge/Branch-master-green.svg?longCache=true"
+        alt="Branch">
+  </a>
+  <a href="https://github.com/CriseLYJ/awesome-python-login-model/stargazers">
+    <img src="https://img.shields.io/github/stars/CriseLYJ/awesome-python-login-model.svg?label=Stars&style=social"
+        alt="Stars">
+  </a>
+    <a href="https://github.com/CriseLYJ/awesome-python-login-model/network/members">
+    <img src="https://img.shields.io/github/forks/CriseLYJ/awesome-python-login-model.svg?label=Forks&style=social"
+        alt="Forks">
+  </a>
+  <a href="http://www.gnu.org/licenses/">
+    <img src="https://img.shields.io/badge/License-GNU-blue.svg?longCache=true"
+        alt="License">
+  </a>
+</p>
 <br>
 <div align="center">
   <sub>Created by
