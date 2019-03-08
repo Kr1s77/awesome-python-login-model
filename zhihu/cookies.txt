@@ -1,0 +1,6 @@
+#LWP-Cookies-2.0
+Set-Cookie3: _xsrf=7qKmlNE8AhPrZgPpxRoVU7eGi7Vxkp89; path="/"; domain=".zhihu.com"; path_spec; expires="2021-08-24 14:39:13Z"; version=0
+Set-Cookie3: _zap="954d6864-426d-46be-a6b6-68cf88bb1997"; path="/"; domain=".zhihu.com"; path_spec; domain_dot; expires="2021-03-07 14:39:20Z"; version=0
+Set-Cookie3: capsion_ticket="\"2|1:0|10:1552055953|14:capsion_ticket|44:ZTA1OGMxNTEzYTEzNDRiMTk5NDlmMDcwNzYwMDAwODQ=|b1fb272912d5e772d0174b383aa25f706ceea220fdde6193cda5967354724137\""; path="/"; domain=".zhihu.com"; path_spec; expires="2019-04-07 14:39:13Z"; httponly=None; version=0
+Set-Cookie3: z_c0="\"2|1:0|10:1552055960|4:z_c0|80:MS4xdTdxVUJRQUFBQUFtQUFBQVlBSlZUWmpNYjExWjRrdGVlVF83Z2JwZERHM3VWZ3hlaXAzcVBBPT0=|5fcc89d291e56f62dd489510ee4930c813a8e0b98312e8f10cdfd85c0b932f87\""; path="/"; domain=".zhihu.com"; path_spec; expires="2019-09-04 14:39:20Z"; httponly=None; version=0
+Set-Cookie3: tgw_l7_route=f2979fdd289e2265b2f12e4f4a478330; path="/"; domain="www.zhihu.com"; path_spec; expires="2019-03-08 14:54:13Z"; version=0
