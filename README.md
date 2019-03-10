@@ -28,6 +28,10 @@
     <img src="https://img.shields.io/badge/License-GNU-blue.svg?longCache=true"
         alt="License">
   </a>
+   <a href="https://github.com/sindresorhus/awesome">
+   <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"
+        alt="Awesome">
+  </a>
 </p>
 <br>
 <div align="center">
@@ -42,6 +46,18 @@
 # 💕Website login model
 🌟收集了一些各大网站登陆方式， 和一些网站的爬虫程序，有的是通过selenium登录，有的是通过抓包直接模拟登录，有的是利用scrapy,希望对小白有所帮助,本项目用于研究和分享各大网站的模拟登陆方式，和爬虫程序，会持续更新。。。
 
+<<<<<<< HEAD
+=======
+#### 联系我
+- My Email : criselyj@163.com
+
+## Have something to say (Important) ❗️❗️
+- 今天有人给我说了一些东西，他说：”你今天开源这些东西会让别人容易的反爬虫“。对，我知道，当然我很清楚这些，但是人生总是需要一些挑战不是吗？兄弟？可能有些我为了破解它们花费了很多的时间，但是当我攻破他们防守的时刻，才是最刺激的，不是吗？如果没人反抗，我做这些才是真的毫无意义，只有真正的攻与守，才能促使我们进步，时代在变兄弟，科技也在变，安于现状，才是错误的根本原因！我会持续维护此网站，接受所有的挑战!
+- 希望你们不要安于现状，生活处处是惊喜！
+
+## 🎉Life is fantastic🥳! bro💪~
+
+>>>>>>> 7ae23b650d706f3266489edfdc65ca886d36d6e5
 ## About
 
 模拟登陆基本采用的是直接登录或者使用selenium+webdriver的方式，有的网站直接登录难度很大，比如qq空间，bilibili等如果采用selenium就相对轻松一些。
