@@ -39,15 +39,8 @@
 
 ****
 
-# 🌟Website_login_mode
+# 💕Website login model
 🌟收集了一些各大网站登陆方式， 和一些网站的爬虫程序，有的是通过selenium登录，有的是通过抓包直接模拟登录，有的是利用scrapy,希望对小白有所帮助,本项目用于研究和分享各大网站的模拟登陆方式，和爬虫程序，会持续更新。。。
-
-
-## Have something to say❗️❗️(Important)
-- 今天有人给我说了一些东西，他说：”你今天开源这些东西会让别人容易的反爬虫“。对，我知道，当然我很清楚这些，但是人生总是需要一些挑战不是吗？兄弟？我认为当我攻破他们防守的时刻，才是最刺激的，不是吗？如果没人反抗，我做这些才是真的毫无意义，只有真正的攻与守，才能促使我们进步，时代在变兄弟，科技也在变，安于现状，才是错误的根本原因！我今年才21岁，我还有大把的时间，我会持续维护此网站，接受所有的挑战！当然我也需要一份稳定的工作！
-- 希望你们不要安于现状，生活处处是惊喜！
-
-## 🎉Life is fantastic🥳! bro💪~
 
 ## About
 
@@ -77,23 +70,28 @@
 - [x] [微信网页版登录并获取好友列表](https://wx.qq.com/)
 - [x] [Github](https://github.com/)
 - [x] [爬取图虫相应的图片](https://tuchong.com/)
+- [x] [网易云音乐](https://music.163.com/)
+- [x] [糗事百科](https://www.qiushibaike.com/)
 
 ## show
 
 ### Bilibili自动登录测试正常，成功率98%
 
-![](./image/bilibili.jpg)
+![](./images/bilibili.gif)
+
+![](./images/bilibili.jpg)
 
 ### web微信
 
+![](./images/weixin.gif)
 
-![Alt text](./image/weixin.jpg)
+![Alt text](./images/weixin.jpg)
 
-### 图虫爬虫
+### 图虫Spider
 
-![](./image/Jietu20190306-232224.jpg)
+![](./images/tuchong.gif)
 
-![](./image/Jietu20190306-232303.jpg)
+![](./images/tuchong.jpg)
 
 ### 淘宝web
 - taobao.py为模拟登录
@@ -101,11 +99,11 @@
 
 ### Github
 
-![](./image/github.jpg)
+![](./images/github.jpg)
 
 ### 新增链家Spider
 
-![](./image/lianjia.jpg)
+![](./images/lianjia.gif)
 
 ```
 1. 爬取淘宝各子标签，按销量排名商品信息，按分类保存至MongoDB
@@ -132,8 +130,14 @@
 - 知乎登录没有问题，不过要手动输入验证码
 
 
-![](./image/zhihulogin.jpg)
+![](./images/zhihulogin.jpg)
 
+
+### 糗事百科
+
+![](./images/qiushibaike.gif)
+
+![](./images/qiushibaike.jpg)
 
 ## tips of pull request 
 
@@ -154,14 +158,18 @@
 2. 如果你觉得某个网站的登录很有代表性，欢迎在 issue 中提出
 3. 如果网站的登录很有意思，我会在后面的更新中加入
 4. 网站的登录机制有可能经常的变动，所以当现在的模拟的登录的规则不能使用的时候，请在 issue 中提出
-- 如果关注量大的话，我还是会不断维护此仓库带来更多的东西，并且重构代码，
+5. 如果关注量大的话，我还是会不断维护此仓库带来更多的东西，并且重构代码，
+6. 欢迎向我提PR
 
 ## Acknowledgments
-### Thanks for all!
 
-![](./image/yanjing.png)
+- Thanks for all 🎉
 
-### 再次感谢所有支持我的人---
+## Have something to say❗️❗️(Important)
+- 今天有人给我说了一些东西，他说：”你今天开源这些东西会让别人容易的反爬虫“。对，我知道，当然我很清楚这些，但是人生总是需要一些挑战不是吗？兄弟？我认为当我攻破他们防守的时刻，才是最刺激的，不是吗？如果没人反抗，我做这些才是真的毫无意义，只有真正的攻与守，才能促使我们进步，时代在变兄弟，科技也在变，安于现状，才是错误的根本原因！我今年才21岁，我还有大把的时间，我会持续维护此网站，接受所有的挑战！当然我也需要一份稳定的工作！
+- 希望你们不要安于现状，生活处处是惊喜！
+
+## 🎉Life is fantastic🥳! bro💪~
 
 ## Written at the end
 - I need your support.

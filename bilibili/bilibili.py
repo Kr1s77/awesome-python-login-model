@@ -19,7 +19,7 @@ update_time:2019-3-7
 
 class BiliBili():
     """
-    登陆B站, 处理极验验证码
+    登陆B站, 处理验证码
     电脑的缩放比例需要为100%, 否则验证码图片的获取会出现问题
     """
 
@@ -114,8 +114,8 @@ class BiliBili():
         :param y: 像素点的y坐标
         :return: 像素是否相同
         """
-        pixel1 = img1.load()[x, y]
-        pixel2 = img2.load()[x, y]
+        pixel1 = img1.load()[x-1, y]
+        pixel2 = img2.load()[x-1, y]
         threshold = 100
         if abs(pixel1[0] - pixel2[0]) < threshold and abs(pixel1[1] - pixel2[1]) < threshold and abs(
                 pixel1[2] - pixel2[2]) < threshold:

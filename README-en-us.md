@@ -59,18 +59,18 @@ Although it is selenium when logging in, for efficiency, we can maintain the coo
 
 ### Bilibili automatic login test is normal, the success rate is 98%
 
-![](./image/bilibili.jpg)
+![](./images/bilibili.jpg)
 
 ### web Weichat
 
 
-![Alt text](./image/weixin.jpg)
+![Alt text](./images/weixin.jpg)
 
 ### 图虫spider
 
-![](./image/Jietu20190306-232224.jpg)
+![](./images/Jietu20190306-232224.jpg)
 
-![](./image/Jietu20190306-232303.jpg)
+![](./images/Jietu20190306-232303.jpg)
 
 ### TaoBaoweb
 - taobao.py为模拟登录
@@ -78,7 +78,7 @@ Although it is selenium when logging in, for efficiency, we can maintain the coo
 
 ### Github
 
-![](./image/github.jpg)
+![](./images/github.jpg)
 
 ```
 1. Climb the sub-labels of Taobao, rank the product information by sales, and save to MongoDB by category.
@@ -125,4 +125,4 @@ Although it is selenium when logging in, for efficiency, we can maintain the coo
 
 ## Written at the end
 - I need your support.
-- And I think you can give me a 🌟``star``!
+- And I think you can give me a 🌟``star``!s
