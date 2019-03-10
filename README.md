@@ -165,20 +165,15 @@
 5. 如果关注量大的话，我还是会不断维护此仓库带来更多的东西，并且重构代码，
 6. 欢迎向我提PR
 
-## Acknowledgments
-
-- Thanks for all 🎉
-
 ## Have something to say❗️❗️(Important)
 - 今天有人给我说了一些东西，他说：”你今天开源这些东西会让别人容易的反爬虫“。对，我知道，当然我很清楚这些，但是人生总是需要一些挑战不是吗？兄弟？我认为当我攻破他们防守的时刻，才是最刺激的，不是吗？如果没人反抗，我做这些才是真的毫无意义，只有真正的攻与守，才能促使我们进步，时代在变兄弟，科技也在变，安于现状，才是错误的根本原因！我今年才21岁，我还有大把的时间，我会持续维护此网站，接受所有的挑战！当然我也需要一份稳定的工作！
 - 希望你们不要安于现状，生活处处是惊喜！
 
 ## 🎉Life is fantastic🥳! bro💪~
 
+## Acknowledgments
 
-#### 联系我
+- Thanks for all 🎉
+
+## 联系我
 - My Email : criselyj@163.com
-
-## Written at the end
-- I need your support.
-- And I think you can give me a 🌟``star``!
