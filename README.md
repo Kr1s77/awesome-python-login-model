@@ -133,8 +133,15 @@
 ### 知乎
 - 知乎登录没有问题，不过要手动输入验证码
 
+- 知乎登录遇到“execjs._exceptions.ProgramError: TypeError: 'exports' 未定义”
+- 原因以及解决办法：
+```
+1. 由于是你本地的JScript引擎只有一个默认的JScript，所以会造成json未定义的错误。
+2. execjs会自动使用当前电脑上的运行时环境
+3. 解决办法：安装一个nodejs的V8引擎就可以了
+```
 
-![](./images/zhihulogin.jpg)
+![](./images/zhihu.jpg)
 
 
 ### 糗事百科
