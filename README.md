@@ -134,7 +134,7 @@
 - 知乎登录没有问题，不过要手动输入验证码
 
 
-![](./images/zhihulogin.jpg)
+![](./images/zhihu.jpg)
 
 
 ### 糗事百科
