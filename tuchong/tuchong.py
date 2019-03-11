@@ -76,7 +76,7 @@ def parse_imgURL(html):
 def download_image(url):
     try:
         urls = 'https:' + url
-        ir = requests.get(urls)
+        ir = requests.get(urls, headers=headers)
         if ir.status_code == 200:
             save_image(ir.content)
         return None
