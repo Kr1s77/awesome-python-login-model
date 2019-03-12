@@ -18,6 +18,7 @@
 * ChromeDriver([官网地址](https://sites.google.com/a/chromium.org/chromedriver/))
 * selenium 3.14.1
 * pyquery 1.4
+* 不支持无GUI的linux,虽然可以用`Xvfb+pyvirtualdisplay`,但是`pyvirtualdisplay`官方目前只支持到`python3.5`
 
 ## Method_First
 
