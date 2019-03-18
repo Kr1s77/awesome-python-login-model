@@ -77,7 +77,31 @@
 - [x] [网易云音乐](https://music.163.com/)
 - [x] [糗事百科](https://www.qiushibaike.com/)
 
-## show
+## catalogue
+- [x] [Facebook模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/facebook/facebook.py)
+- [x] [无需身份验证即可抓取Twitter前端API](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/twitter)
+- [x] [微博网页版模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/sina/sina.py)
+- [x] [知乎模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/zhihu/zhihu.py)
+- [x] [QQZone模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/qqzone/qq_zone.py)
+- [x] [CSDN模拟登录，已失效](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/csdn/csdn_login.py)
+- [x] [淘宝爬虫](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/taobao)
+- [x] [Baidu模拟登录一](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/baidu)
+- [x] [果壳爬虫程序](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/guoke)
+- [x] [JingDong 模拟登录和自动申请京东试用](hhttps://github.com/CriseLYJ/awesome-python-login-model/tree/master/jd_login)
+- [x] [163mail已失效待重构](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/163email/163email.py)
+- [x] [拉钩模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/lagou/Lagou.py)
+- [x] [Bilibili模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/bilibili/bilibili.py)
+- [x] [豆瓣待更新](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/douban/douban.py)
+- [x] [Baidu2模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/baidu2/baidu.py)
+- [x] [猎聘网模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/liepin)
+- [x] [微信网页版登录并获取好友列表](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/webWeixin/webWeixin.py)
+- [x] [Github模拟登录两种解决方案都可行](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/Github)
+- [x] [爬取图虫想要的图片](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/tuchong/tuchong.py)
+- [x] [网易云音乐downloader](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/NeteaseCloudMusicDownload/wangyiyun_spider.py)
+- [x] [糗事百科爬虫](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/qsbk/qiushibaike.py）
+
+
+## Test
 
 ### Bilibili自动登录测试正常，成功率98%
 
@@ -159,19 +183,8 @@
 - 关于验证码：本项目所用的方法都没有处理验证码，识别复杂验证码的难度就目前来说，还是比较大的。以我的心得来说，做爬虫最好的方式就是尽量规避验证码。
 - 代码失效：由于网站策略或者样式改变，导致代码失效，请给我提issue，如果你已经解决，可以提PR，谢谢！
 - 正在对部分代码进行优化。。。
-
-## Another
-- 如果你有什么比较难登陆的网站，比如发现用了selenium+webdriver都还登陆不了的网站，欢迎给我提issue
 - 如果该repo对大家有帮助，给个star鼓励鼓励吧
 
-## something to add
-
-1. 项目写了一段时间后，发现代码的风格和程序的易用性，可扩展性，代码的可读性，都存在一定的问题，所以接下来最重要的是重构代码，让大家可以更容易的做出一些自己的小功能。
-2. 如果你觉得某个网站的登录很有代表性，欢迎在 issue 中提出
-3. 如果网站的登录很有意思，我会在后面的更新中加入
-4. 网站的登录机制有可能经常的变动，所以当现在的模拟的登录的规则不能使用的时候，请在 issue 中提出
-5. 如果关注量大的话，我还是会不断维护此仓库带来更多的东西，并且重构代码，
-6. 欢迎向我提PR
 
 ## Have something to say❗️❗️(Important)
 - 今天有人给我说了一些东西，他说：”你今天开源这些东西会让别人容易的反爬虫“。对，我知道，当然我很清楚这些，但是人生总是需要一些挑战不是吗？兄弟？我认为当我攻破他们防守的时刻，才是最刺激的，不是吗？如果没人反抗，我做这些才是真的毫无意义，只有真正的攻与守，才能促使我们进步，时代在变兄弟，科技也在变，安于现状，才是错误的根本原因!
@@ -185,3 +198,6 @@
 
 ## 联系我
 - My Email : criselyj@163.com
+
+## 注意：
+- 本项目仅用于学习和交流
