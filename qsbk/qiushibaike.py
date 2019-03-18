@@ -34,6 +34,7 @@ class Spider(object):
 
     def get_page_urls(self):
         if self.page_num > 1:
+            # 通过遍历获取到链接
             for n in range(2, self.page_num + 1):
                 page_url = page_init + 'page/' + str(n) + '/'
                 self.page_urls.append(page_url)
@@ -41,7 +42,6 @@ class Spider(object):
     def get_joke_urls(self):
         for page_url in self.page_urls:
             html = requests.get(page_url).content
-            # print html
             selector = etree.HTML(html)
             qiushi_id = selector.xpath('/html/body/div[@id="content"]/div/div[@id="content-left"]/div/@id')
             for q_id in qiushi_id:
@@ -63,18 +63,26 @@ class Spider(object):
     def download(self):
         joke_path = SAVE_PATH + str(self.joke_id) + '.txt'
         self.joke_id += 1
+        # 笑话路径
         print(joke_path)
         with open(joke_path, "w") as f:
             f.write(self.joke_content)
 
     def start(self):
+        # 获取主页url
         self.get_page_urls()
+        # 获取笑话链接
         self.get_joke_urls()
+        # 获取笑话
         self.get_joke()
+        # 调用下载接口
         self.download()
 
 
 if __name__ == '__main__':
+    # 获取账号
     page_num = input('请告诉我：你想获取多少页的糗事？')
+
     qb = Spider(page_num)
+    # 启动爬虫程序
     qb.start()
