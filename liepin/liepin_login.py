@@ -70,7 +70,7 @@ class Leipin(object):
 
 
 if __name__ == '__main__':
-    userName = input("plz input username:")
-    password = input("plz input password:")
+    userName = input("请输入你的用户名:")
+    password = input("请输入你的密码:")
     lp = Leipin(userName, password)
     print(lp.login())
