@@ -87,7 +87,7 @@
 - [x] [淘宝爬虫](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/taobao)
 - [x] [Baidu模拟登录一](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/baidu)
 - [x] [果壳爬虫程序](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/guoke)
-- [x] [JingDong 模拟登录和自动申请京东试用](hhttps://github.com/CriseLYJ/awesome-python-login-model/tree/master/jd_login)
+- [x] [JingDong 模拟登录和自动申请京东试用](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/jd_login)
 - [x] [163mail已失效待重构](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/163email/163email.py)
 - [x] [拉钩模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/lagou/Lagou.py)
 - [x] [Bilibili模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/bilibili/bilibili.py)
@@ -98,8 +98,7 @@
 - [x] [Github模拟登录两种解决方案都可行](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/Github)
 - [x] [爬取图虫想要的图片](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/tuchong/tuchong.py)
 - [x] [网易云音乐downloader](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/NeteaseCloudMusicDownload/wangyiyun_spider.py)
-- [x] [糗事百科爬虫](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/qsbk/qiushibaike.py）
-
+- [x] [糗事百科爬虫](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/qsbk/qiushibaike.py)
 
 ## Test
 
