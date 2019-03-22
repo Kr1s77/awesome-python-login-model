@@ -4,6 +4,7 @@ Required
 - requests 
 - bs4
 '''
+import getpass
 import hashlib
 import requests
 from bs4 import BeautifulSoup
@@ -71,6 +72,6 @@ class Leipin(object):
 
 if __name__ == '__main__':
     userName = input("请输入你的用户名:")
-    password = input("请输入你的密码:")
+    password = getpass.getpass("password:")
     lp = Leipin(userName, password)
     print(lp.login())
