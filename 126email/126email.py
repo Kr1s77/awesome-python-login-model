@@ -6,13 +6,12 @@ def login():
     acount_num = input('请输入账号:\n')
     passwd_str = input('请输入密码:\n')
     driver = webdriver.Chrome()
-    url = 'http://mail.163.com/'
+    url = 'http://mail.126.com/'
     driver.get(url)
     time.sleep(30)
 
-    # 使用CSSSelector正则匹配头部
     elem = driver.find_element_by_css_selector("iframe[id^='x-URS-iframe']")
-    # 163登陆框是使用iframe进行嵌套的，所以需要先切换到该iframe
+    # # 126登陆框是使用iframe进行嵌套的，所以需要先切换到该iframe
     driver.switch_to.frame(elem)
 
     acount = driver.find_element_by_name('email')
