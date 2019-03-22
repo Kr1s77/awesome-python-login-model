@@ -192,7 +192,7 @@ def login(username, password, key):
 
 try:
     input = raw_input
-except:
+except NameError:
     pass
 
 if __name__ == "__main__":
