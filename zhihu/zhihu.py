@@ -8,6 +8,7 @@ github:https://github.com/CriseLYJ/
 update_time:2019-3-6
 """
 import base64
+import getpass
 import hashlib
 import hmac
 import json
