@@ -1,5 +1,5 @@
+# 这里需要使用getpass模块才能使输入密码不可见
 import getpass
-
 import requests
 import hashlib
 import time
