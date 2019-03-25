@@ -4,3 +4,4 @@
 
 - lianjia:只爬取
 - pic：图表
+- 链家来自：https://github.com/Python3Spiders/LianJiaSpider

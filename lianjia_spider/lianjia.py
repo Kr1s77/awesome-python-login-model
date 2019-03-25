@@ -50,8 +50,6 @@ def get_list_page_url(city):
 detail_list = list()
 
 
-# 需要先在本地开启代理池
-# 代理池仓库: https://github.com/Python3WebSpider/ProxyPool
 def get_valid_ip():
     url = "http://localhost:5000/get"
     try:
