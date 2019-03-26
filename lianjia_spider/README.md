@@ -1,7 +1,0 @@
-一个基于分页、线程池、代理池的链家网快速爬虫项目，速度可达 10000 条/5 分钟，严禁将所得数据商用！
-
-同时对数据进行了清洗、分析、可视化。
-
-- lianjia:只爬取
-- pic：图表
-- 链家来自：https://github.com/Python3Spiders/LianJiaSpider
