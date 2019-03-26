@@ -26,33 +26,52 @@ update_time:2019-3-6
 import requests
 
 
-class TieBaSpier():
+class TieBa_Spier():
 
-    def __init__(self):
+    def __init__(self, max_pn, kw):
         # 初始化
-        pass
+        self.max_pn = max_pn
+        self.kw = kw
+        self.base_url = "https://tieba.baidu.com/f?kw={}&ie=utf-8&pn={}"
+        self.headers = {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
+        }
 
     def get_url_list(self):
         """获取url列表"""
-        pass
+        return [self.base_url.format(self.kw, pn) for pn in range(0, self.max_pn, 50)]
 
-    def get_content(self):
+    def get_content(self, url):
         """发送请求获取响应内容"""
-        pass
+        response = requests.get(
+            url=url,
+            headers=self.headers
+        )
+        # print(response.text)
+        return response.content
 
-    def get_items(self):
-        """从响应中提取数据"""
-        pass
-
-    def save_items(self):
-        """保存数据"""
-        pass
+    def save_items(self, content, idx):
+        """从响应内容中提取数据"""
+        with open('{}.html'.format(idx), 'wb') as f:
+            f.write(content)
+        return None
 
     def run(self):
         """运行程序"""
-        pass
+        # 获取url_list
+        url_list = self.get_url_list()
+
+        for url in url_list:
+            # 发送请求获取响应
+            content = self.get_content(url)
+
+            # 保存数据
+            items = self.save_items(content, url_list.index(url) + 1)
+
+            # 测试
+            # print(items)
 
 
 if __name__ == '__main__':
-    spider = TieBaSpier()
+    spider = TieBa_Spier(200, "英雄联盟")
     spider.run()
