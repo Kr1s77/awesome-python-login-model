@@ -69,6 +69,7 @@
 - [x] [拉钩](https://www.lagou.com/)
 - [x] [Bilibili](https://www.bilibili.com/)
 - [x] [豆瓣](https://www.douban.com/)
+- [x] [豆瓣spider](https://www.douban.com/)
 - [x] [Baidu2](www.baidu.com)
 - [x] [猎聘网](https://www.liepin.com/)
 - [x] [微信网页版登录并获取好友列表](https://wx.qq.com/)
@@ -76,6 +77,7 @@
 - [x] [爬取图虫相应的图片](https://tuchong.com/)
 - [x] [网易云音乐](https://music.163.com/)
 - [x] [糗事百科](https://www.qiushibaike.com/)
+- [x] [百度贴吧spider](https://tieba.baidu.com/)
 
 ## catalogue
 - [x] [Facebook模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/facebook/facebook.py)
