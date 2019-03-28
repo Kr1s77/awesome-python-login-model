@@ -108,7 +108,7 @@
 
 > [Please touch here to view test images](./README-Test.md)
 
-## Infomations
+## Informations
 - 为感谢你们的支持，准备写一套免费爬虫的教程，保证你学会以后可以爬取市面上大部分的网站，[教程地址](https://github.com/CriseLYJ/-Python-crawler-starts-from-zero)
 
 ## tips of pull request 
