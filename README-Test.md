@@ -70,3 +70,8 @@
 ![](./images/qiushibaike.gif)
 
 ![](./images/qiushibaike.jpg)
+
+### 百度翻译
+- 输入英语自动翻译
+
+![](./images/baidu_translate.gif)
