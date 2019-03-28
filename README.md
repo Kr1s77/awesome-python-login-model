@@ -78,6 +78,7 @@
 - [x] [网易云音乐](https://music.163.com/)
 - [x] [糗事百科](https://www.qiushibaike.com/)
 - [x] [百度贴吧spider](https://tieba.baidu.com/)
+- [x] [百度翻译](https://fanyi.baidu.com/)
 
 ## catalogue
 - [x] [Facebook模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/facebook/facebook.py)
@@ -106,6 +107,9 @@
 # Test
 
 > [Please touch here to view test images](./README-Test.md)
+
+## Infomations
+- 为感谢你们的支持，准备写一套免费爬虫的教程，保证你学会以后可以爬取市面上大部分的网站，[教程地址](https://github.com/CriseLYJ/-Python-crawler-starts-from-zero)
 
 ## tips of pull request 
 
