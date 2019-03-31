@@ -56,7 +56,6 @@
 ## Completed
 
 - [x] [Facebook](https://www.facebook.com/)
-- [x] [无需身份验证即可抓取Twitter前端API](https://twitter.com/)
 - [x] [微博网页版](http://weibo.com)
 - [x] [知乎](http://zhihu.com)
 - [x] [QQZone](https://qzone.qq.com/)
@@ -82,7 +81,6 @@
 
 ## catalogue
 - [x] [Facebook模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/facebook/facebook.py)
-- [x] [无需身份验证即可抓取Twitter前端API](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/twitter)
 - [x] [微博网页版模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/sina/sina.py)
 - [x] [知乎模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/zhihu/zhihu.py)
 - [x] [QQZone模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/qqzone/qq_zone.py)
