@@ -60,8 +60,8 @@
 - [x] [微博网页版](http://weibo.com)
 - [x] [知乎](http://zhihu.com)
 - [x] [QQZone](https://qzone.qq.com/)
-- [x] [CSDN](https://www.csdn.net/)
-- [x] [淘宝](www.taobao.com)
+- [x] [CSDN--已重构](https://www.csdn.net/)
+- [x] [淘宝--重构中](www.taobao.com)
 - [x] [Baidu](www.baidu.com)
 - [x] [果壳](https://www.guokr.com/)
 - [x] [JingDong 模拟登录和自动申请京东试用](https://www.jd.com/)
@@ -70,13 +70,13 @@
 - [x] [Bilibili](https://www.bilibili.com/)
 - [x] [豆瓣](https://www.douban.com/)
 - [x] [豆瓣spider](https://www.douban.com/)
-- [x] [Baidu2](www.baidu.com)
+- [x] [Baidu](www.baidu.com)
 - [x] [猎聘网](https://www.liepin.com/)
 - [x] [微信网页版登录并获取好友列表](https://wx.qq.com/)
 - [x] [Github](https://github.com/)
 - [x] [爬取图虫相应的图片](https://tuchong.com/)
 - [x] [网易云音乐](https://music.163.com/)
-- [x] [糗事百科](https://www.qiushibaike.com/)
+- [x] [糗事百科--改为协程版](https://www.qiushibaike.com/)
 - [x] [百度贴吧spider](https://tieba.baidu.com/)
 - [x] [百度翻译](https://fanyi.baidu.com/)
 
@@ -86,8 +86,8 @@
 - [x] [微博网页版模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/sina/sina.py)
 - [x] [知乎模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/zhihu/zhihu.py)
 - [x] [QQZone模拟登录](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/qqzone/qq_zone.py)
-- [x] [CSDN模拟登录，已失效](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/csdn/csdn_login.py)
-- [x] [淘宝爬虫](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/taobao)
+- [x] [CSDN模拟登录--已恢复](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/csdn/csdn_login.py)
+- [x] [淘宝爬虫--重构中](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/taobao)
 - [x] [Baidu模拟登录一](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/baidu)
 - [x] [果壳爬虫程序](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/guoke)
 - [x] [JingDong 模拟登录和自动申请京东试用](https://github.com/CriseLYJ/awesome-python-login-model/tree/master/jd_login)
@@ -123,10 +123,6 @@
 - 如果该repo对大家有帮助，给个star鼓励鼓励吧
 
 
-## Have something to say❗️❗️(Important)
-- 今天有人给我说了一些东西，他说：”你今天开源这些东西会让别人容易的反爬虫“。对，我知道，当然我很清楚这些，但是人生总是需要一些挑战不是吗？兄弟？我认为当我攻破他们防守的时刻，才是最刺激的，不是吗？如果没人反抗，我做这些才是真的毫无意义，只有真正的攻与守，才能促使我们进步，时代在变兄弟，科技也在变，安于现状，才是错误的根本原因!
-- 希望你们不要安于现状，生活处处是惊喜！
-
 ## 🎉Life is fantastic🥳! bro💪~
 
 ## Acknowledgments
@@ -136,6 +132,7 @@
 - Thanks for all 🎉
 
 ## 联系我
+- 欢迎反馈！
 - My Email : criselyj@163.com
 
 ## 注意：
