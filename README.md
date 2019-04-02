@@ -61,7 +61,7 @@
 - [x] [知乎](http://zhihu.com)
 - [x] [QQZone](https://qzone.qq.com/)
 - [x] [CSDN](https://www.csdn.net/)
-- [x] [淘宝](www.taobao.com)
+- [x] [淘宝](https://login.taobao.com/member/login.jhtml)
 - [x] [Baidu](www.baidu.com)
 - [x] [果壳](https://www.guokr.com/)
 - [x] [JingDong 模拟登录和自动申请京东试用](https://www.jd.com/)
@@ -102,6 +102,7 @@
 - [x] [爬取图虫想要的图片](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/tuchong/tuchong.py)
 - [x] [网易云音乐downloader](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/NeteaseCloudMusicDownload/wangyiyun_spider.py)
 - [x] [糗事百科爬虫](https://github.com/CriseLYJ/awesome-python-login-model/blob/master/qsbk/qiushibaike.py)
+- [x] [淘宝登陆-访问](https://login.taobao.com/member/login.jhtml)
 
 
 # Test
