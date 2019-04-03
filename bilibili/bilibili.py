@@ -34,7 +34,7 @@ class BiliBili():
         self.browser = webdriver.Chrome(options=options)
         self.url = 'https://passport.bilibili.com/login'
         self.browser.get(self.url)
-        self.wait = WebDriverWait(self.browser, 5， 0.2)
+        self.wait = WebDriverWait(self.browser, 5, 0.2)
         self.username = username
         self.password = password
 
