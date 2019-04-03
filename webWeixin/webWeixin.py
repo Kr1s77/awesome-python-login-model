@@ -131,21 +131,6 @@ def login():
 
     response = session.get(redirect_uri)
     data = response.content.decode('utf-8')
-
-    # print(data)
-
-    '''
-        <error>
-            <ret>0</ret>
-            <message>OK</message>
-            <skey>xxx</skey>
-            <wxsid>xxx</wxsid>
-            <wxuin>xxx</wxuin>
-            <pass_ticket>xxx</pass_ticket>
-            <isgrayscale>1</isgrayscale>
-        </error>
-    '''
-    xml.dom
     doc = xml.dom.minidom.parseString(data)
     root = doc.documentElement
 
@@ -200,7 +185,7 @@ def webwxinit():
         SyncKeyList.append('%s_%s' % (item['Key'], item['Val']))
     SyncKey = '|'.join(SyncKeyList)
 
-    ErrMsg = dic['BaseResponse']['ErrMsg']
+    # ErrMsg = dic['BaseResponse']['ErrMsg']
 
     Ret = dic['BaseResponse']['Ret']
     if Ret != 0:
