@@ -6,26 +6,19 @@ import pyquery
 
 
 def login(session, email, password):
-    '''
-    Attempt to login to Facebook. Returns user ID, xs token and
-    fb_dtsg token. All 3 are required to make requests to
-    Facebook endpoints as a logged in user. Returns False if
-    login failed.
-    '''
-
-    # Navigate to Facebook's homepage to load Facebook's cookies.
+    """
+    获取cookie
+    """
     response = session.get('https://m.facebook.com')
 
-    # Attempt to login to Facebook
+    # 尝试登陆
     response = session.post('https://m.facebook.com/login.php', data={
         'email': email,
         'pass': password
     }, allow_redirects=False)
 
-    # If c_user cookie is present, login was successful
     if 'c_user' in response.cookies:
-
-        # Make a request to homepage to get fb_dtsg token
+        # 说明登陆成功
         homepage_resp = session.get('https://m.facebook.com/home.php')
 
         dom = pyquery.PyQuery(homepage_resp.text.encode('utf8'))
@@ -46,7 +39,7 @@ if __name__ == "__main__":
 
     session = requests.session()
     session.headers.update({
-        'User-Agent': 'Mozilla/5.0 (X11; Linux i686; rv:39.0) Gecko/20100101 Firefox/39.0'
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'
     })
 
     fb_dtsg, user_id, xs = login(session, args.email, args.password)

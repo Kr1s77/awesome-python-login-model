@@ -9,7 +9,7 @@ url = "https://movie.douban.com/j/search_subjects"
 
 # 定义请求头
 headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
 }
 # 循环构建请求参数并且发送请求
 for page_start in range(0, 100, 20):
