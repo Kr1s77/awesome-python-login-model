@@ -67,7 +67,7 @@ class Taobao_Spider:
 
 
 if __name__ == "__main__":
-    username = input("请输入你的微博用户名:")
+    username = input("请输入你的淘宝用户名:")
     password = input("请输入密码:")
 
     spider = Taobao_Spider(username, password)
