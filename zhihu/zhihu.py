@@ -20,8 +20,7 @@ from urllib.parse import urlencode
 import execjs
 import requests
 from PIL import Image
-
-
+import parsel
 class ZhihuAccount(object):
 
     def __init__(self, username: str = None, password: str = None):
