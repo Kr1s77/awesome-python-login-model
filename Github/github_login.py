@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*
 import getpass
 
 import requests
@@ -14,7 +15,7 @@ update_time:2019-3-7
 class Login(object):
     def __init__(self):
         base_url = 'https://github.com/'
-        # 登陆 url 
+        # 登陆 url
         self.login_url = base_url + 'login'
         # 提交表单的 api
         self.post_url = base_url + 'session'
@@ -67,7 +68,7 @@ class Login(object):
         user_name = doc("summary > span").text().strip()
         print(f"用户名：{user_name}")
 
-        # 提取仓库列表        
+        # 提取仓库列表
         Repositories = doc("div.Box-body > ul > li").text().split()
         for Repositorie in Repositories:
             print(Repositorie)
