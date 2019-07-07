@@ -32,16 +32,21 @@ import js2py
 
 context = js2py.EvalJs()
 
+# 翻译模式: 英译中
+TRANSLATING_MODE__EN_TO_CN = 0
+# 翻译模式: 中译英
+TRANSLATING_MODE__CN_TO_EN = 1
 
 class BaiDuTranslater(object):
     """
     百度翻译爬虫
     """
 
-    def __init__(self, query):
+    def __init__(self, query, mode):
         # 初始化
         self.url = "https://fanyi.baidu.com/basetrans"
         self.query = query
+        self.mode = mode
         self.headers = {
             "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
             "Referer": "https://fanyi.baidu.com/",
@@ -59,13 +64,22 @@ class BaiDuTranslater(object):
         return sign
 
     def make_data(self, sign):
-        data = {
-            "query": self.query,
-            "from": "en",
-            "to": "zh",
-            "token": "6f5c83b84d69ad3633abdf18abcb030d",
-            "sign": sign
-        }
+        if self.mode == TRANSLATING_MODE__EN_TO_CN:
+            data = {
+                "query": self.query,
+                "from": "en",
+                "to": "zh",
+                "token": "6f5c83b84d69ad3633abdf18abcb030d",
+                "sign": sign
+            }
+        else:
+            data = {
+                "query": self.query,
+                "from": "zh",
+                "to": "en",
+                "token": "6f5c83b84d69ad3633abdf18abcb030d",
+                "sign": sign
+            }
         return data
 
     def get_content(self, data):
@@ -89,6 +103,16 @@ class BaiDuTranslater(object):
 
 
 if __name__ == '__main__':
+    translatingMode = 0 # 翻译模式
+    while True:
+        print("请选择翻译模式(输入序号):")
+        print("0: 英译中    1: 中译英")
+        translatingModeStr = input("")
+        if translatingModeStr == "0" or translatingModeStr == "1":
+            translatingMode = int(translatingModeStr)
+            break
+        else:
+            print("请输入正确选项。")
     query = input("请输入您要翻译的内容:")
-    translater = BaiDuTranslater(query)
+    translater = BaiDuTranslater(query, translatingMode)
     translater.run()
