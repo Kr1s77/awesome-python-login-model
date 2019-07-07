@@ -218,7 +218,7 @@ class BiliBili():
 
 if __name__ == '__main__':
     ACCOUNT = input('请输入您的账号:')
-    PASSOWRD = input('请输入您的密码:')
+    PASSWORD = input('请输入您的密码:')
 
-    test = BiliBili(ACCOUNT, PASSOWRD)  # 输入账号和密码
+    test = BiliBili(ACCOUNT, PASSWORD)  # 输入账号和密码
     test.crack()
