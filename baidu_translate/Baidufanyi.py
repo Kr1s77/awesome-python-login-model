@@ -32,6 +32,9 @@ import js2py
 
 context = js2py.EvalJs()
 
+# 翻译模式
+# 0:英译中 1:中译英
+translating_mode = 0
 
 class BaiDuTranslater(object):
     """
@@ -59,10 +62,17 @@ class BaiDuTranslater(object):
         return sign
 
     def make_data(self, sign):
+        # 判断翻译模式,选取对应的 from 和 to 值.
+        if translating_mode == 0:
+            from_str = "en"
+            to_str = "zh"
+        else:
+            from_str = "zh"
+            to_str = "en"
         data = {
             "query": self.query,
-            "from": "en",
-            "to": "zh",
+            "from": from_str,
+            "to": to_str,
             "token": "6f5c83b84d69ad3633abdf18abcb030d",
             "sign": sign
         }
@@ -89,6 +99,7 @@ class BaiDuTranslater(object):
 
 
 if __name__ == '__main__':
+    translating_mode = int(input("请输入翻译模式(0:英译中 1:中译英):"))
     query = input("请输入您要翻译的内容:")
     translater = BaiDuTranslater(query)
     translater.run()
