@@ -127,7 +127,7 @@
 
 ## Acknowledgments
 
-> [@deepforce](https://github.com/deepforce) | [@cclauss](https://github.com/cclauss) | [ksoeasyxiaosi](https://github.com/ksoeasyxiaosi)
+> [@deepforce](https://github.com/deepforce) | [@cclauss](https://github.com/cclauss) | [ksoeasyxiaosi](https://github.com/ksoeasyxiaosi) | [JasonJunJun](https://github.com/JasonJunJun)
 - 欢迎更多的人来提pr~
 - Thanks for all 🎉
 
