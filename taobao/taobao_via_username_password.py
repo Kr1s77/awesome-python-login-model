@@ -13,6 +13,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 这里我解释一下"perl -pi -e 's/cdc_/dog_/g' /usr/local/bin/chromedriver"，这段代码其实就是全局修改/usr/local/bin/chromedriver中的cdc_为dog_，"/usr/local/bin/chromedriver"是chromedriver所在的文件路径。
 感谢https://www.jianshu.com/p/368be2cc6ca1这篇文章的作者。
+
+######################################
+- 已经修改的 webdriver 在仓库中请自行下载
+######################################
 """
 
 
