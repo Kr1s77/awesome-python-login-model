@@ -1,4 +1,6 @@
+import time
 from selenium import webdriver
+
 
 login_url = "http://account.youdao.com/login?service=dict"
 
@@ -32,6 +34,10 @@ def login():
     # Click Login button
     mydriver.find_element_by_xpath(xpaths['submitButton']).click()
 
+    # add sleep
+    print('登录成功')
+    time.sleep(5)
+          
 
 if __name__ == '__main__':
     login()
