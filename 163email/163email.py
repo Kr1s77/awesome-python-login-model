@@ -1,5 +1,8 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 def login():
@@ -8,26 +11,31 @@ def login():
     driver = webdriver.Chrome()
     url = 'http://mail.163.com/'
     driver.get(url)
-    time.sleep(30)
+
+    # 等待页面加载完成，出现可以点击到密码登录的button
+    wait = WebDriverWait(driver, 10)
+    wait.until(EC.element_to_be_clickable((By.ID, 'lbNormal')))
+    driver.find_element_by_id('lbNormal').click()
+
 
     # 使用CSSSelector正则匹配头部
     elem = driver.find_element_by_css_selector("iframe[id^='x-URS-iframe']")
     # 163登陆框是使用iframe进行嵌套的，所以需要先切换到该iframe
     driver.switch_to.frame(elem)
 
-    acount = driver.find_element_by_name('email')
-    acount.clear()
-    acount.send_keys(acount_num)
+    account_el = driver.find_element_by_xpath('//input[@name="email"]')
+    account_el.clear()
+    account_el.send_keys(acount_num)
 
-    passwd = driver.find_element_by_name('password')
-    passwd.clear()
-    passwd.send_keys(passwd_str)
+    password_el = driver.find_element_by_xpath('//input[@name="password"]')
+    password_el.clear()
+    password_el.send_keys(passwd_str)
 
-    time.sleep(3)
-    click_button = driver.find_element_by_id('dologin')
-    click_button.click()
-    time.sleep(5)
-    cur_cookies = driver.get_cookies()[0]
+    login_el = driver.find_element_by_xpath('//a[@id="dologin"]')
+    login_el.click()
+
+    time.sleep(10)
+    cur_cookies = driver.get_cookies()
     return cur_cookies
 
 
