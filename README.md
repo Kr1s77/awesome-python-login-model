@@ -2,13 +2,13 @@
 
 <br>
 <p align="center">
-    <img src="https://github.com/CriseLYJ/flask-video-streaming-recorder/blob/master/img/main.jpg?raw=true" 
+    <img src="https://github.com/Kr1s77/Python-crawler-tutorial-starts-from-zero/blob/master/images/%E6%80%81%E5%BA%A6CoderClub.jpeg?raw=true" 
         alt="Master">
 </p>
 
 <br>
 
-<p align="center">"<i>Did you know all your doors were locked?</i>" - Riddick (The Chronicles of Riddick)</p>
+<p align="center">"<i>推荐一波我的公众号，想要学习爬虫，大数据的可以关注一下，绝对满满的干货哦！</i>" - 一个诈尸的人，哈哈</p>
 <br>
 
 <p align="center">
