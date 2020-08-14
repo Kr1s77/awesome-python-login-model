@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # @Author: CriseLYJ
-# @Date:   2018-12-8 17:13:11
-
+# @Date:   2020-08-14 13:48:23
 
 import requests
-import math, random
+import math
+import random
 from Crypto.Cipher import AES
 import base64
 import codecs
@@ -30,11 +30,11 @@ class decrypt_music(object):
         return res
 
     def aes_encrypt(self, text, key):
-        iv = '0102030405060708'
+        iv = b'0102030405060708'
         pad = 16 - len(text.encode()) % 16
         text = text + pad * chr(pad)
-        encryptor = AES.new(key, AES.MODE_CBC, iv)
-        msg = base64.b64encode(encryptor.encrypt(text))
+        encryptor = AES.new(key.encode(), AES.MODE_CBC, iv)
+        msg = base64.b64encode(encryptor.encrypt(text.encode()))
         return msg
 
     def rsa_encrypt(self, value, text, modulus):
@@ -79,7 +79,7 @@ class Spider(object):
         return response['data'][0]['url']
 
     def __download_mp3(self, url, filename):
-        abspath = os.path.abspath('.')  # 获取绝对路径
+        abspath = os.path.abspath('.')
         os.chdir(abspath)
         response = requests.get(url, headers=self.headers).content
         path = os.path.join(abspath, filename)
@@ -116,10 +116,6 @@ class Spider(object):
         print('程序结束！')
 
 
-def main():
+if __name__ == '__main__':
     spider = Spider()
     spider.run()
-
-
-if __name__ == '__main__':
-    main()
