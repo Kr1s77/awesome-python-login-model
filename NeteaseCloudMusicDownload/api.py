@@ -33,6 +33,8 @@ class decrypt_music(object):
         iv = b'0102030405060708'
         pad = 16 - len(text.encode()) % 16
         text = text + pad * chr(pad)
+        # fix: https://github.com/Kr1s77/awesome-python-login-model/issues/100#issuecomment-673897848
+        # error: TypeError: Object type <class 'str'> cannot be passed to C code
         encryptor = AES.new(key.encode(), AES.MODE_CBC, iv)
         msg = base64.b64encode(encryptor.encrypt(text.encode()))
         return msg
