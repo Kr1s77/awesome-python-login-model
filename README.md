@@ -1,6 +1,16 @@
 <h2 align="center"><code>🎉Life is fantastic🥳!~</code></h2>
 
 <br>
+<p align="center">
+    <img src="https://github.com/CriseLYJ/flask-video-streaming-recorder/blob/master/img/main.jpg?raw=true" 
+        alt="Master">
+</p>
+
+<br>
+
+<p align="center">"<i>Did you know all your doors were locked?</i>" - Riddick (The Chronicles of Riddick)</p>
+
+<br>
 
 <p align="center">
   <a href="https://github.com/CriseLYJ/awesome-python-login-model/tree/master">
@@ -27,7 +37,7 @@
 <br>
 <div align="center">
   <sub>Created by
-  <a href="https://criselyj.github.io/">CriseLYJ</a>
+  <a href="https://Kr1s77.github.io/">@kris</a>
 </div>
 
 <br>
