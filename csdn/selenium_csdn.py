@@ -1,34 +1,77 @@
-from selenium import webdriver
+# -*- coding: utf-8 -*-
+# @Author: Kris
+# @Mail: criselyj@163.com
+# @Date:   2020-08-14 17:40:11
+import os
+import random
+import asyncio
+from pyppeteer import launch
 
 
-def login(email, password):
-    # 1. 驱动
-    browser = webdriver.Chrome()
+base_url = 'https://passport.csdn.net/login'
+current_dir = os.path.dirname(os.path.realpath(__file__))
+# Fix:https://github.com/miyakogi/pyppeteer/issues/183 文件权限问题。
+cache_dir = os.path.join(current_dir, 'cache')
+if not os.path.exists(cache_dir):
+    os.mkdir(cache_dir)
 
-    # 2. 操作浏览器行为
-    browser.get("https://passport.csdn.net/login")
 
-    # 3. 找到账号登陆接口并点击
-    input_button = browser.find_element_by_xpath('//div[@class="main-select"]/ul/li[2]/a')
-    input_button.click()
+class Api(object):
+    def __init__(self, account, password):
+        self.url = base_url
+        self.account = account
+        self.password = password
+        self.browser = None
+        self.page = None
 
-    # 4. 输入账号密码，并点击登陆
-    # 输入账号
-    input_element = browser.find_element_by_xpath(
-        '//div[@class="col-xs-12 col-sm-12 control-col-pos col-pr-no col-pl-no"]/input')
-    input_element.send_keys(email)
+    async def send_key(self):
+        await asyncio.sleep(random.randint(2, 3))
+        switch_btn = await self.page.xpath('//ul/li[@class="text-tab border-right"][2]/a')
+        await switch_btn[0].click()
+        input_account = await self.page.xpath('//div[@class="form-group"]/div/input[1]')
+        await input_account[0].type(self.account,
+                             {'delay': random.randint(100, 200) - 50})
+        await self.page.type('#password-number', self.password,
+                             {'delay': random.randint(100, 200) - 50})
 
-    # 输入密码
-    input_password = browser.find_element_by_xpath(
-        '//div[@class="col-xs-12 col-sm-12 control-col-pos col-pr-no col-pl-no"]/input[@id="password-number"]')
-    input_password.send_keys(password)
+        await self.page.click('button[data-type=account]')
+        await asyncio.sleep(random.randint(5, 10))
 
-    # 点击登陆
-    touch_button = browser.find_element_by_xpath('//button')
-    touch_button.click()
+    async def crawl(self):
+        # 测试环境下 headless 设置为 False
+        # 生产环境可以修改为无头浏览器
+        self.browser = await launch({
+            'headless': False,
+            'userDataDir': cache_dir,
+            'defaultViewport': {'width': 1440, 'height': 1000},
+            'args': ['--no-sandbox']
+        })
+        self.page = await self.browser.newPage()
+        await self.page.goto(self.url)
 
+        # 伪造当前浏览状态 防止自动化工具检测
+        codes = (
+            "() =>{ Object.defineProperties(navigator,{ webdriver:"
+            "{ get: () => false } }) }",
+            "() =>{ window.navigator.chrome = { runtime: {},  }; }",
+            "() =>{ Object.defineProperty(navigator, 'languages', "
+            "{ get: () => ['en-US', 'en'] }); }",
+            "() =>{ Object.defineProperty(navigator, 'plugins', { "
+            "get: () => [1, 2, 3, 4, 5,6], }); }"
+        )
+        for code in codes:
+            await self.page.evaluate(code)
+        await self.send_key()
+
+
+def main():
+    print('[*] 模拟登陆 CSDN 程序启动...')
+    account = input('[*] 请输入账号：')
+    password = input('[*] 请输入密码：')
+    login = Api(account, password)
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(login.crawl())
+    
 
 if __name__ == '__main__':
-    email = input("请输入你的账号")
-    password = input("请输入你的密码:")
-    login(email, password)
+    main()
