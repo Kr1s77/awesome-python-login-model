@@ -1,0 +1,8 @@
+csdn login module
+========================
+
+@upload and test date: 2020-08-17
+@use module: pyppeteer==0.2.2
+@author: Kris
+
+$ pip install pyppeteer==0.2.2
