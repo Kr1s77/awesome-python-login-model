@@ -57,6 +57,7 @@ class XMLogin(object):
         self.browser = await launch({
             'headless': False,
             'userDataDir': cache_dir,
+            'defaultViewport': {'width': 1440, 'height': 1000},
             'args': ['--no-sandbox']
         })
         self.page = await self.browser.newPage()
