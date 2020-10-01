@@ -44,7 +44,7 @@
 
 ****
 
-## 💕Website login model
+## 💕Website login model - By Kris
 一些爬虫示例程序，以及模拟登陆程序,模拟登陆基于 selenium，有些模拟登录基于 js 逆向，持续更新，有问题可以直接提交 Issues，欢迎提交 PR, 测试通过可以直接 merge，文中所有程序都是使用 ``python3`` 编写 :-)
 
 ## About
