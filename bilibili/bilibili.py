@@ -7,6 +7,7 @@ from selenium.common.exceptions import TimeoutException
 from PIL import Image
 from io import BytesIO
 from time import sleep
+from getpass import getpass
 import random
 
 """
@@ -218,7 +219,7 @@ class BiliBili():
 
 if __name__ == '__main__':
     ACCOUNT = input('请输入您的账号:')
-    PASSWORD = input('请输入您的密码:')
+    PASSWORD = getpass('请输入您的密码:')
 
     test = BiliBili(ACCOUNT, PASSWORD)  # 输入账号和密码
     test.crack()

@@ -4,6 +4,7 @@ import re
 import sys
 import time
 from uuid import uuid4
+from getpass import getpass
 
 import requests
 
@@ -153,6 +154,6 @@ class LoginError(Exception):
 
 if __name__ == '__main__':
     username = input("Username: ")
-    password = input("Password: ")
+    password = getpass("Password: ")
     b = BaiduLogin()
     b.login(username=username, password=password)
