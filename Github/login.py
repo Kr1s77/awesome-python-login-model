@@ -4,6 +4,7 @@
 
 import re
 import requests
+from getpass import getpass
 
 
 class GithubLogin(object):
@@ -61,7 +62,7 @@ class GithubLogin(object):
 
 if __name__ == '__main__':
     email = input('Account:')
-    password = input('Password:')
+    password = getpass('Password:')
 
     login = GithubLogin(email, password)
     login.login_GitHub()

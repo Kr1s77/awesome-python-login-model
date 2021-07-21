@@ -4,6 +4,7 @@
 # @Date:   2020-08-14 17:40:11
 import os
 import random
+from getpass import getpass
 import asyncio
 from pyppeteer import launch
 
@@ -67,7 +68,7 @@ class Api(object):
 def main():
     print('[*] 模拟登陆 CSDN 程序启动...')
     account = input('[*] 请输入账号：')
-    password = input('[*] 请输入密码：')
+    password = getpass('[*] 请输入密码：')
     login = Api(account, password)
     loop = asyncio.get_event_loop()
     loop.run_until_complete(login.crawl())

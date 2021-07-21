@@ -1,4 +1,5 @@
 import time
+from getpass import getpass
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -6,8 +7,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 def login():
-    acount_num = input('请输入账号:\n')
-    passwd_str = input('请输入密码:\n')
+    acount_num = input('请输入账号:')
+    passwd_str = getpass('请输入密码:')
     driver = webdriver.Chrome()
     url = 'http://mail.163.com/'
     driver.get(url)
