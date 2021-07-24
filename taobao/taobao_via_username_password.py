@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
+from getpass import getpass
 
 """
 运行前必须要做的事情：
@@ -77,6 +78,6 @@ class TaobaoSpider:
 
 if __name__ == "__main__":
     username = input("请输入用户名：")
-    password = input("请输入密码：")
+    password = getpass("请输入密码：")
     spider = TaobaoSpider(username, password)
     spider.login()

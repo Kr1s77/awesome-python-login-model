@@ -44,6 +44,11 @@
 
 ****
 
+## 传送门
+- [x] [4G 代理](https://github.com/Kr1s77/FgSurfing)
+- [x] [异常处理回调，直接 hook 所有函数，和类](https://github.com/Kr1s77/abnormalities)
+给个 🌟 再走吧...
+    
 ## 💕Website login model
 一些爬虫示例程序，以及模拟登陆程序,模拟登陆基于 selenium，有些模拟登录基于 js 逆向，持续更新，有问题可以直接提交 Issues，欢迎提交 PR, 测试通过可以直接 merge，文中所有程序都是使用 ``python3`` 编写 :-)
 
@@ -136,7 +141,7 @@
 
 ## 联系我
 - 欢迎反馈！
-- My Email : criselyj@163.com
+- Email : criselyj@163.com
 
 ## 注意：
 - 本项目仅用于学习和交流

@@ -1,10 +1,10 @@
 import time
 from selenium import webdriver
-
+from getpass import getpass
 
 def login():
-    acount_num = input('请输入账号:\n')
-    passwd_str = input('请输入密码:\n')
+    acount_num = input('请输入账号:')
+    passwd_str = getpass('请输入密码:')
     driver = webdriver.Chrome()
     url = 'http://mail.126.com/'
     driver.get(url)
