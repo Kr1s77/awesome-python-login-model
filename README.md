@@ -1,4 +1,4 @@
-<h2 align="center"><code>🎉Life is fantastic🥳!~</code></h2>
+<h2 align="center"><code>🎉Life is Fantastic🥳!~</code></h2>
 
 <br>
 <p align="center">
