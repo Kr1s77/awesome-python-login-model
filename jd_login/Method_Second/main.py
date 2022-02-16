@@ -298,6 +298,9 @@ def login():
         password = base64.b64decode(password)
         password = password.decode()
 
+    # 一定要点击一下切换选项卡，不然无法交互
+    browser_login.find_element_by_link_text('账户登录').click()
+
     #找到输入框
     input_username =  browser_login.find_element_by_name('loginname')
     #输入用户名
