@@ -28,7 +28,7 @@ browser = webdriver.Chrome(chrome_options = chrome_options)
 #设置浏览器最长等待时间
 wait = WebDriverWait(browser, settings['waitTime'])
 
-#打开用于登陆的chrome浏览器
+#打开用于登录的chrome浏览器
 browser_login = webdriver.Chrome()
 #设置浏览器最长等待时间
 wait_login = WebDriverWait(browser_login, settings['waitTime'])
