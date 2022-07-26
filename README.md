@@ -50,11 +50,11 @@
 给个 🌟 再走吧...
     
 ## 💕Website login model
-一些爬虫示例程序，以及模拟登陆程序,模拟登陆基于 selenium，有些模拟登录基于 js 逆向，持续更新，有问题可以直接提交 Issues，欢迎提交 PR, 测试通过可以直接 merge，文中所有程序都是使用 ``python3`` 编写 :-)
+一些爬虫示例程序，以及模拟登录程序,模拟登录基于 selenium，有些模拟登录基于 js 逆向，持续更新，有问题可以直接提交 Issues，欢迎提交 PR, 测试通过可以直接 merge，文中所有程序都是使用 ``python3`` 编写 :-)
 
 ## About
 
-模拟登陆基本采用的是直接登录或者使用selenium+webdriver的方式，有的网站直接登录难度很大，比如qq空间，bilibili等如果采用selenium就相对轻松一些。
+模拟登录基本采用的是直接登录或者使用selenium+webdriver的方式，有的网站直接登录难度很大，比如qq空间，bilibili等如果采用selenium就相对轻松一些。
 
 虽然在登录的时候采用的是selenium,为了效率，我们可以在登录过后得到的cookie维护起来，然后调用requests或者scrapy等进行数据采集，这样数据采集的速度可以得到保证。
 
@@ -111,7 +111,7 @@
 - [x] [爬取图虫想要的图片](https://github.com/Kr1s77/awesome-python-login-model/blob/master/tuchong/tuchong.py)
 - [x] [网易云音乐downloader](https://github.com/Kr1s77/awesome-python-login-model/blob/master/NeteaseCloudMusicDownload/wangyiyun_spider.py)
 - [x] [糗事百科爬虫](https://github.com/Kr1s77/awesome-python-login-model/blob/master/qsbk/qiushibaike.py)
-- [x] [淘宝登陆-访问](https://login.taobao.com/member/login.jhtml)
+- [x] [淘宝登录-访问](https://login.taobao.com/member/login.jhtml)
 
 
 # Test
