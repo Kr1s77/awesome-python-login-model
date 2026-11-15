@@ -47,6 +47,7 @@
 ## 传送门
 - [x] [4G 代理](https://github.com/Kr1s77/FgSurfing)
 - [x] [异常处理回调，直接 hook 所有函数，和类](https://github.com/Kr1s77/abnormalities)
+- [x] [No Stairs Please](https://nostairsplease.com/)（Live-music venue directory & MCP server `https://nostairsplease.com/mcp`）
 给个 🌟 再走吧...
     
 ## 💕Website login model
